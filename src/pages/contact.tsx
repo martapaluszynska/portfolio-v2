@@ -6,9 +6,9 @@ import '../styles/styles.scss';
 import styles from './contact.module.scss';
 import FormField from '../components/Form/FormField';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import '../utils/fontawesome.js'
+import '../utils/fontawesome.js';
 
 interface ContactPageProps {
     data: {
@@ -24,43 +24,43 @@ interface ContactPageProps {
 const InitialState = [
     {
         required: true,
-        name: "name",
-        label: "name",
-        value: "",
+        name: 'name',
+        label: 'name',
+        value: '',
         errors: [],
     },
     {
         required: true,
-        name: "email",
-        label: "e-mail",
-        value: "",
+        name: 'email',
+        label: 'e-mail',
+        value: '',
         errors: [],
     },
     {
         required: true,
-        name: "message",
-        label: "message",
-        value: "",
+        name: 'message',
+        label: 'message',
+        value: '',
         errors: [],
     },
-]
+];
 
 export default (props: ContactPageProps) => {
 
-    const [formFields, setFormFields] = useState(InitialState)
+    const [formFields, setFormFields] = useState(InitialState);
 
-    useEffect(() => {
-        console.log(formFields);
-    }, [formFields])
+    // useEffect(() => {
+    //     console.log(formFields);
+    // }, [formFields])
 
     const handleTextInputChange = (index: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = event.currentTarget;
 
-        const newForm = [...formFields]
-        newForm[index].value = value
+        const newForm = [...formFields];
+        newForm[index].value = value;
 
         setFormFields(newForm);
-    }
+    };
 
     return (
         <Layout mainElementClass="page--contact">
@@ -73,10 +73,10 @@ export default (props: ContactPageProps) => {
 
                             <div className="socialIcons">
                                 <div className="socialIcon">
-                                <FontAwesomeIcon icon="coffee" />
+                                    <FontAwesomeIcon icon="coffee" />
                                 </div>
                                 <div className="socialIcon">
-                                <FontAwesomeIcon icon="coffee" />
+                                    <FontAwesomeIcon icon="coffee" />
                                 </div>
                             </div>
 

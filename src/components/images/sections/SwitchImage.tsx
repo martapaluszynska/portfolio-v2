@@ -6,30 +6,33 @@ interface SwitchImageProps {
     top: string;
     left: string;
     value: boolean;
-    onChange: (value: boolean) => void;
+    onChange: (value: boolean) => (event: any) => void;
 }
 
 const SwitchImage = ({ onChange, value, top, left }: SwitchImageProps) => {
 
     return (
         <div
-            onClick={() => onChange(!value)}
+            onClick={onChange(!value)}
             className={styles.lightSwitch}
             style={{
                 top,
-                left
+                left,
             }}
         >
             <TextBouble
                 text={'switch it!'}
-                top="-80px" left="-180px"
-                flipped
-                outlined
+                top="-80px"
+                left="-180px"
+                flipped={true}
+                outlined={true}
             />
-            <div className={`
-                ${styles.switch}
-                ${value ? styles.on : styles.off}
-                `} />
+            <div
+                className={`
+                    ${styles.switch}
+                    ${value ? styles.on : styles.off}
+                `}
+            />
         </div>
     );
 };

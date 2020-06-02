@@ -1,15 +1,15 @@
 import React, {useCallback, useEffect, useLayoutEffect, useRef, useState} from 'react';
 import styles from './WorkImage.module.scss';
 
-type Coordinate = {
+interface Coordinate {
     x: number;
     y: number;
-};
+}
 
 export const WorkImage = () => {
 
     const canvasRef = useRef<HTMLCanvasElement>({} as HTMLCanvasElement);
-    const drawAreaRef = useRef<SVGPathElement>({} as SVGPathElement)
+    const drawAreaRef = useRef<SVGPathElement>({} as SVGPathElement);
     const [mousePosition, setMousePosition] = useState<Coordinate | undefined>(undefined);
     const [isPainting, setIsPainting] = useState(false);
 
@@ -17,7 +17,6 @@ export const WorkImage = () => {
         const canvas: HTMLCanvasElement = canvasRef.current;
         const viewportOffsetTop = event?.target.getBoundingClientRect().top + window.scrollY;
         const viewportOffsetLeft = event?.target.getBoundingClientRect().left;
-        
         return { x: event.pageX - viewportOffsetLeft, y: event.pageY - viewportOffsetTop };
     };
 
@@ -30,22 +29,18 @@ export const WorkImage = () => {
     }, []);
 
     useEffect(() => {
-        const canvas = canvasRef.current
+        const canvas = canvasRef.current;
         const workArea = drawAreaRef.current.getBoundingClientRect();
 
         canvas.width = workArea.width;
         canvas.height = workArea.height;
         // canvas.style.left = `${workArea.x}px`;
         // canvas.height = workArea.x;
-
-        console.log(drawAreaRef.current.getBoundingClientRect());
-        
-
-    }, [])
+    }, []);
 
     useEffect(() => {
         if (!canvasRef.current) {
-            return
+            return;
         }
         const canvas: any = canvasRef.current;
 
@@ -58,8 +53,7 @@ export const WorkImage = () => {
     const drawLine = useCallback(
         (originalMousePosition: Coordinate, newMousePosition: Coordinate) => {
             const canvas: HTMLCanvasElement = canvasRef.current;
-            const context = canvas.getContext("2d") as CanvasRenderingContext2D;
-            
+            const context = canvas.getContext('2d') as CanvasRenderingContext2D;
             if (context) {
                 context.strokeStyle = '#5d0923';
                 context.lineJoin = 'round';
@@ -84,7 +78,7 @@ export const WorkImage = () => {
                 }
             }
         },
-        [isPainting, mousePosition, drawLine]
+        [isPainting, mousePosition, drawLine],
     );
 
     useEffect(() => {

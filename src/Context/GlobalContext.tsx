@@ -1,15 +1,14 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, Dispatch } from 'react';
 
-const PageContext = createContext<any>({})
-const PageActionsContext = createContext<Function>(() => {})
-
+const PageContext = createContext<any>({});
+const PageActionsContext = createContext<Dispatch<any>>(() => ({}));
 
 export const usePageContext = () => useContext(PageContext);
 export const usePageActionsContext = () => useContext(PageActionsContext);
 
 export const PageContextProvider: React.FC = ({ children }) => {
     const [pageData, setPageData] = useState<any>({
-        activePage: '/'
+        activePage: '/',
     });
 
     return (
@@ -18,5 +17,5 @@ export const PageContextProvider: React.FC = ({ children }) => {
                 {children}
             </PageActionsContext.Provider>
         </PageContext.Provider>
-    )
-}
+    );
+};

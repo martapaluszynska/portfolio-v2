@@ -5,7 +5,6 @@ import { usePageContext } from './../Context/GlobalContext';
 import useSiteMetadata from './../Hooks/useSiteMetadata';
 import { Location } from '@reach/router';
 
-
 interface ILink {
     name: string;
     link: string;
@@ -17,13 +16,8 @@ interface IProps {
 
 export const Dots: React.FC<IProps> = ({ links }) => {
 
-
-    const pageData = usePageContext()
-
-    const { name } = useSiteMetadata();
-
-    console.log(location);
-    
+    const pageData = usePageContext();
+    const { name: siteName } = useSiteMetadata();
 
     return (
         <div className="dots-wrapper">

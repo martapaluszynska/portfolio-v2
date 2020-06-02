@@ -86,18 +86,21 @@ const IndexPage = (props: IndexPageProps) => {
             </Hero>
             {/* EDUCATION */}
             <section className={`section ${styles.sectionEducation}`}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 190.3"
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1366 190.3"
                     style={{
                         position: 'absolute',
                         bottom: `100%`,
                         left: 0,
                         width: `100%`,
-                        zIndex: -1
+                        zIndex: -1,
                     }}
                 >
                     <path
                         fill="#0e3239"
-                        d="M307 190a83.7 83.7 0 01-31.4-3.6c-52-16.7-55-74.4-55-76a110.3 110.3 0 00-220.6 0l.1 5.5H0v166.3h1366V115.9z"/>
+                        d="M307 190a83.7 83.7 0 01-31.4-3.6c-52-16.7-55-74.4-55-76a110.3 110.3 0 00-220.6 0l.1 5.5H0v166.3h1366V115.9z"
+                    />
                 </svg>
                 <div className="container">
                     <div className="columns is-centered is-relative">
@@ -140,17 +143,18 @@ const IndexPage = (props: IndexPageProps) => {
                         position: 'absolute',
                         top: `100%`,
                         left: 0,
-                        width: `100%`
+                        width: `100%`,
                     }}
                 >
-                    <path d="M0 0a320 320 0 00319.8 310.5 319.4 319.4 0 00249.3-119.4C664.3 73.1 719 4.1 950.6 0z" fill="#0e3239" />
+                    <path d="M0 0a320 320 0 00319.8 310.5 319.4 319.4 0 00249.3-119.4C664.3 73.1 719 4.1 950.6 0z" fill="#0e3239"/>
                 </svg>
             </section>
             {/* VOLUNTEERING */}
             <section className="section section--volunteering">
                 <div className="container">
                     <div className="columns is-vcentered">
-                        <div className="column is-half section-image"
+                        <div
+                            className="column is-half section-image"
                             style={{
                                 // marginTop: `-25%`
                             }}
@@ -162,7 +166,7 @@ const IndexPage = (props: IndexPageProps) => {
                             <p className="">{volunteering.text}</p>
                         </div>
                     </div>
-                    
+
                 </div>
             </section>
             <section className={`footer ${styles.sectionContact}`}>

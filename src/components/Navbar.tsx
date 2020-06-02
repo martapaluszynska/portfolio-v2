@@ -21,12 +21,11 @@ const Navbar = (props: NavbarProps) => {
     const navigation = props.menuLinks.filter((link) => link.name !== 'about' && link.name !== '404');
     const dotsNavigation = props.menuLinks.filter((link) => dotLinks.includes(link.name));
 
-
     return (
         <Location>
             {({ location }) => (
                 <>
-                    <nav className={`navbar is-fixed-top is-spaced ${location.pathname === '/' || location.pathname === '/contact' ? 'is-primary is-transparent' : '' }`} role="navigation" aria-label="main navigation">
+                    <nav className={`navbar is-fixed-top is-spaced ${location.pathname === '/' || location.pathname === '/contact' ? 'is-primary is-transparent' : ''}`} role="navigation" aria-label="main navigation">
                         <div className="navbar-brand">
                             <Link
                                 className="navbar-item"
@@ -51,11 +50,11 @@ const Navbar = (props: NavbarProps) => {
                     </nav>
                     <>
                         <Dots links={dotsNavigation} />
-                        {location.pathname === '/work' &&
+                        {location.pathname === '/work' && (
                             <div className="scroll-for-more">
                                 <a href="#">scroll for more!</a>
                             </div>
-                        }
+                        )}
                     </>
 
                 </>

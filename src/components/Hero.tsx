@@ -71,7 +71,7 @@ export const Hero: React.FC<IProps> = ({ name, tagline, style = 'is-seconadry', 
                             {image}
                         </div>
                     </div>
-                    {tagline && 
+                    {tagline && (
                         <div className="columns is-centered">
                             <div className="column is-half">
                                 <h2 className="subtitle is-12">
@@ -79,7 +79,7 @@ export const Hero: React.FC<IProps> = ({ name, tagline, style = 'is-seconadry', 
                                 </h2>
                             </div>
                         </div>
-                    }
+                    )}
                 </div>
             </div>
             <img

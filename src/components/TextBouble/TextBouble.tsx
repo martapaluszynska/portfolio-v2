@@ -18,11 +18,11 @@ export const TextBouble = ({ text, top, left, link, outlined, flipped }: Props) 
                 top,
                 left,
             }}
-        className={`
-            ${styles.textBouble}
-            ${flipped ? styles.flipped : ''}
-            ${outlined ? styles.outlined : ''}
-        `}
+            className={`
+                ${styles.textBouble}
+                ${flipped ? styles.flipped : ''}
+                ${outlined ? styles.outlined : ''}
+            `}
         >
             <a className={styles.textBouble__text} href={link}>{text}</a>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96.6 96.6">
