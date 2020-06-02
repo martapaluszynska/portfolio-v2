@@ -1,8 +1,8 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React, { ReactNode } from 'react';
-import { NavigationArrows } from './components';
 import Navbar from './Navbar';
 import { PageContextProvider } from './../Context/GlobalContext';
+import { NavigationArrows } from './NavigationArrows';
 
 interface IProps {
     mainElementClass?: string;

@@ -7,7 +7,6 @@ import '../styles/styles.scss';
 
 import IndexImage from './../components/images/sections/IndexImage';
 import styles from './index.module.scss';
-import { TextBouble } from './../components/TextBouble/TextBouble';
 
 interface IndexPageProps {
     data: {
