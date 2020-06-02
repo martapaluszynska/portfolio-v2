@@ -6,7 +6,7 @@ import INDEX_PAGE from '../data/index.json';
 import '../styles/styles.scss';
 
 import IndexImage from './../components/images/sections/IndexImage';
-import styles from './index.module.scss';
+import styles from './indexPage.module.scss';
 
 interface IndexPageProps {
     data: {
