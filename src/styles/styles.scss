@@ -1,0 +1,52 @@
+@charset "utf-8";
+// If need, change your variables before importing Bulma
+
+$career: (
+    'background': #EDCDE4,
+    'accent': #DC830C,
+    'text': #5D0923,
+    'interactive': #fff
+);
+
+$scouts: (
+    'background': #EDCDE4,
+    'accent': #DC830C,
+    'text': #5D0923,
+    'interactive': #fff,
+);
+
+$primary: #5D0923;
+$info: #fff;
+
+$body-family: 'Lato';
+// $body-color: map-get($career, 'text');
+
+$title-family: 'Lora';
+$title-weight: 700;
+
+
+// $primary: map-get($career, 'background');
+
+$navbar-padding-vertical: 1rem;
+$navbar-padding-horizontal: 2rem;
+
+$navbar-background-color: transparent;
+$navbar-item-color: map-get($career, 'text');
+$navbar-item-hover-color: darken(map-get($career, 'text'), 10%);
+$navbar-item-hover-background-color: transparent;
+@import "~bulma/bulma.sass";
+
+p {
+    white-space: pre-wrap;
+}
+
+.section {
+    position: relative;
+    margin: 10rem 0;
+    &-image {
+    }
+}
+
+body {
+    overflow-x: hidden;
+}

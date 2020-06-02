@@ -1,0 +1,90 @@
+{
+    "header": {
+        "cta": "let's sketch!",
+        "text": "My friend Maui - a bit very clumsy ragdoll cat. I am a little jealous of his naps during the day, but You know what? I wouldn’t switch with him! I like biking and short trips to the mountains with my boyfriend too much."
+    },
+    "education": {
+        "title": "Education",
+        "text": "I graduated design studies at the University of Science and Technology and Academy of Fine Arts. Studying at such different universities let me to look at design from different perspectives. I easily combine beautiful and useful.",
+        "image": "test",
+        "data": [
+            {
+                "title": "UX basic course",
+                "text": "Eduweb",
+                "date": "2020",
+                "link": {
+                    "name": "confirmation",
+                    "link": "https://google.com"
+                }
+            },
+            {
+                "title": "Design master's studies",
+                "text": "Academy of Fine Arts in Katowice",
+                "date": "2013-2015"
+            },
+            {
+                "title": "Design bachelor studies",
+                "text": "UTP University of Science and Technology in Bydgoszcz",
+                "date": "2009-2013"
+            }
+        ]
+    },
+    "work-experience": {
+        "title": "Work experience",
+        "file-link": {
+            "name": "Click here to give\nCV in pdf format",
+            "link": "https://google.com"
+        },
+        "data": [
+            {
+                "title": "Graphic communication Co-worker IKEA",
+                "date": "from 2017",
+                "text": "presenting the IKEA offer by graphic communication, informing customers about marketing campaigns, planning and implementing customer guidance, sales supporting by emphasizing the benefits of products, implementation of commercial lighting, using large format printers and cutting plotters, triaining IKEA Co-workers in interpersonal communication.",
+                "image": "chair"
+            },
+            {
+                "title": "Graphic Designer X-5 Productions (creative agency)",
+                "date": "2015 - 2017",
+                "text": "creating event scenery based on license graphics and Key Visuals (Disney, WARNER BROS, Hasbro, Nickelodeon, Animaccord, HiT Entertainment) creating posters, banners, leaflets, textile walls, roll-ups, creating advertising campaigns for shopping malls visualizations of advertising gadgets.",
+                "image": "billboard"
+            },
+            {
+                "title": "Graphic Designer Milutka (accesories for children)",
+                "date": "2016",
+                "text": "web and social media arts.",
+                "image": "social"
+            },
+            {
+                "title": "Graphic Designer - voluntering The Polish Scouting and Guiding Association (ZHP)",
+                "date": "2015-2020",
+                "text": "Logo & design of the „Zuchowe Wieści” magazine",
+                "image": "scout-news-logo",
+                "link": {
+                    "name": "view on ISSU",
+                    "link": "https://google.com"
+                }
+            }
+        ]
+    },
+    "skills": {
+        "title": "Skills",
+        "data": [
+            {
+                "icon": "paper",
+                "title": "2d",
+                "programs": "Adobe In Design, Adobe Illustrator, Adobe Photoshop, Adobe Bridge, Corel",
+                "type": "grafika wektorowa, obróbka fotografii"
+            },
+            {
+                "icon": "cube",
+                "title": "3d",
+                "programs": "Autodesk Inventor, Autodesk 3ds Max, Solidworks, SketchUp",
+                "type": "modelowanie, wizualizacje, dokumentacja techniczna, analiza oświetlenia"
+            }
+        ]
+    },
+    "volunteering": {
+        "title": "Volunteering",
+        "text": "For many year I used to be a Scout Guide of The Polish Scouting and Guiding Association. I was the head of a team of leaders, I organized courses and workshops, but what I remember the best were summer camps with the Brownies group, I was the leader of.\n\nIn those days I learned to work in a group and I convinced many times that everything is achievable with a well-coordinated team."
+    }
+}

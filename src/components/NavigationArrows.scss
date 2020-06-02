@@ -1,0 +1,18 @@
+@import '../styles/styles.scss';
+
+.navigation-arrows {
+    .arrow {
+        position: fixed;
+        top: 50vh;
+        transform: translateY(-50%);
+
+        padding: $navbar-padding-horizontal + 0.75rem;
+
+        cursor: pointer;
+
+        & + .arrow {
+            right: 0;
+        }
+
+    }
+}

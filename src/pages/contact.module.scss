@@ -1,13 +1,10 @@
-$bg-color: #0E3239;
+$bg-color: #5D0E2C;
 $color: white;
 
-.hero--index {
+.hero--contact {
     background-color: $bg-color;
     color: $color;
     :global .title {
         color: $color;
-    }
-    .column-relative {
-        position: relative;
     }
 }

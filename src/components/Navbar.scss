@@ -1,0 +1,20 @@
+@import '../styles/styles.scss';
+
+$color: #5D0E2C;
+
+.navbar {
+    font-weight: 700;
+}
+
+.scroll-for-more {
+    position: absolute;
+    padding-bottom: $navbar-padding-horizontal;
+    padding-left: $navbar-padding-horizontal + 0.75rem;
+    top: calc(100vh - 56px);
+}
+
+.navbar {
+    &.is-primary.is-transparent {
+        background-color: transparent;
+    }
+}

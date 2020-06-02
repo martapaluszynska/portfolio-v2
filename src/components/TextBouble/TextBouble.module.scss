@@ -1,0 +1,37 @@
+$bg-color: #5D0E2C;
+$color: white;
+$height: 2rem;
+
+$border-width: 0.2rem;
+$outline-boder: $border-width solid $color;
+
+.text-bouble {
+    position: absolute;
+    min-width: 150px;
+    path {
+        fill: $bg-color;
+    }
+
+    &__text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $color;
+        font-weight: 900;
+        white-space: pre-wrap;
+    }
+
+    &.flipped {
+        svg {
+            transform: scaleX(-1);
+        }
+    }
+    &.outlined {
+        path {
+            fill: transparent;
+            stroke: #fff;
+            stroke-width: .1rem;
+        }
+    }
+}

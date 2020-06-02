@@ -1,0 +1,58 @@
+$color: white;
+$bgc-primary: #5D0E2C;
+$bgc-secondary: #0E3239;
+
+.section {
+    &--education,
+    &--skills,
+    &--contact {
+        color: $color;
+        :global .title {
+            color: $color;
+        }
+        
+    }
+
+    &--education,
+    &--skills {
+        background-color: $bgc-secondary;
+    }
+
+    &--education {
+        :global .timeline__item {
+            &::before,
+            &::after {
+                background-color: $color;
+            }
+        }
+        &::after {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            content: '';
+            border-top: 100px solid $bgc-secondary;
+            border-right: 100px solid transparent;
+            transform-origin: left;
+            transform: scaleX(20);
+        }
+    }
+
+    &--skills {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+
+    &--volunteering {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    &--contact {
+        background-color: $bgc-primary;
+    }
+}
+
+
+.skills-title {
+    margin-bottom: 5rem;
+}

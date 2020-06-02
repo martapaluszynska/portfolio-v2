@@ -8,7 +8,9 @@
     "rules": {
       "quotemark": [true, "single", "jsx-double"],
       "interface-name": [false],
-      "jsx-no-multiline-js": [false]
+      "jsx-no-multiline-js": [false],
+      "max-line-length": false,
+      "object-literal-sort-keys": false
     },
     "rulesDirectory": []
 }

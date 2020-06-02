@@ -1,0 +1,19 @@
+$color: white;
+
+.label {
+    color: $color;
+}
+
+.input {
+    color: $color;
+    background-color: transparent;
+    border-radius: 0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding-left: 0;
+    &:focus {
+        border-color: $color;
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,31 @@
+.hero {
+    cursor: url(../../static/Untitled-2.png), auto;
+    &__image {
+        svg {
+            margin-left: -10%;
+            max-width: 900px;
+        }
+    }
+    &.hero {
+        &--career {
+
+        }
+
+        &--scouts {
+
+        }
+
+        &--yoga {
+
+        }
+
+        &--firends {
+
+        }
+
+        &--contact {
+
+        }
+
+    }
+}

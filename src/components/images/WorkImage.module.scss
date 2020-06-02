@@ -1,0 +1,33 @@
+.g {
+    fill: none;
+}
+.d {
+    stroke: #04181d;
+}
+.d,
+.g {
+    stroke-miterlimit: 10;
+}
+.d {
+    stroke-width: 4px;
+    fill: #fff;
+}
+.e {
+    fill: #04181d;
+}
+.g {
+    stroke: #5d0923;
+}
+
+.work-image-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+}
+
+#draw-canvas {
+    position: absolute;
+    // border: 1px solid red;
+    top: 6%;
+    left: 26.25%;
+}
