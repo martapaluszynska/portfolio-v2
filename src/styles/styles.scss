@@ -21,7 +21,7 @@ $info: #fff;
 $body-family: 'Lato';
 // $body-color: map-get($career, 'text');
 
-$title-family: 'Lora';
+$title-family: 'Lato';
 $title-weight: 700;
 
 
@@ -49,4 +49,8 @@ p {
 
 body {
     overflow-x: hidden;
+}
+
+.title {
+    white-space: pre-line;
 }

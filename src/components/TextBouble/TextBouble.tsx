@@ -8,9 +8,10 @@ interface Props {
     link?: string;
     flipped?: boolean;
     outlined?: boolean;
+    className?: string;
 }
 
-export const TextBouble = ({ text, top, left, link, outlined, flipped }: Props) => {
+export const TextBouble = ({ text, top, left, link, outlined, flipped, className }: Props) => {
 
     return (
         <div
@@ -22,6 +23,7 @@ export const TextBouble = ({ text, top, left, link, outlined, flipped }: Props) 
                 ${styles.textBouble}
                 ${flipped ? styles.flipped : ''}
                 ${outlined ? styles.outlined : ''}
+                ${className}
             `}
         >
             <a className={styles.textBouble__text} href={link}>{text}</a>

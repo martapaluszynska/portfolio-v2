@@ -1,3 +1,4 @@
+@import "~bulma/sass/utilities/_all.sass";
 @import '../styles/styles.scss';
 
 $width: .5rem;
@@ -25,6 +26,9 @@ $colot-inverse: #fff;
             top: calc(100vh - 68px);
             width: 100%;
             z-index: 1000;
+            @include touch {
+                display: none;
+            }
         }
     }
 

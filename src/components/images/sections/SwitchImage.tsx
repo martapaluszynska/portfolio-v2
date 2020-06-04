@@ -3,24 +3,26 @@ import styles from './SwitchImage.module.scss';
 import { TextBouble } from './../../TextBouble/TextBouble';
 
 interface SwitchImageProps {
-    top: string;
-    left: string;
+    top?: string;
+    left?: string;
     value: boolean;
+    className?: string;
     onChange: (value: boolean) => (event: any) => void;
 }
 
-const SwitchImage = ({ onChange, value, top, left }: SwitchImageProps) => {
+const SwitchImage = ({ onChange, value, top, left, className }: SwitchImageProps) => {
 
     return (
         <div
             onClick={onChange(!value)}
-            className={styles.lightSwitch}
+            className={`${styles.lightSwitch} ${className}`}
             style={{
                 top,
                 left,
             }}
         >
             <TextBouble
+                className={styles.indexTextBoulbe}
                 text={'switch it!'}
                 top="-80px"
                 left="-180px"

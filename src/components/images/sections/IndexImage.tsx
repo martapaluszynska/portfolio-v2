@@ -13,12 +13,11 @@ const IndexImage = () => {
     return (
         <div className={styles.indexImageWrapper}>
             <SwitchImage
-                top="100px"
-                left="20%"
+                className={styles.indexSwitch}
                 value={light}
                 onChange={handleSwitchChange}
             />
-            <svg className={styles.indexImage} xmlns="http://www.w3.org/2000/svg" viewBox="100 0 536 611.5">
+            <svg className={styles.indexImage} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
                 <defs>
                     <linearGradient id="a" x1="-2.6" x2="-1.6" y1=".4" y2=".4" gradientUnits="objectBoundingBox">
                         <stop offset="0" stopColor="#5e734e" />

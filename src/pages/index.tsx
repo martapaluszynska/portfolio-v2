@@ -31,10 +31,12 @@ export default (props: IndexPageProps) => {
                                 <IndexImage />
                             </div>
                             <div className={`column ${styles.columnRelative}`}>
-                                <h1 className="title">{INDEX_PAGE.title}</h1>
-                                <p>
-                                    {INDEX_PAGE.text}
-                                </p>
+                                <div className={styles.indexText}>
+                                    <h1 className="title">{INDEX_PAGE.title}</h1>
+                                    <p>
+                                        {INDEX_PAGE.text}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>

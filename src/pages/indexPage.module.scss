@@ -1,3 +1,4 @@
+@import "~bulma/sass/utilities/_all.sass";
 $bg-color: #0E3239;
 $color: white;
 
@@ -9,5 +10,20 @@ $color: white;
     }
     .column-relative {
         position: relative;
+    }
+}
+
+
+
+.index-text {
+    .title {
+        background-color: red;
+        @include touch {
+        }
+    }
+    max-width: 520px;
+    @include touch {
+        margin: auto;
+        padding: 0 5%;
     }
 }

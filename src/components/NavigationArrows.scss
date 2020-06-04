@@ -1,6 +1,10 @@
+@import "~bulma/sass/utilities/_all.sass";
 @import '../styles/styles.scss';
 
 .navigation-arrows {
+    @include touch {
+        display: none;
+    }
     .arrow {
         position: fixed;
         top: 50vh;

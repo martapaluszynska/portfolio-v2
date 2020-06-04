@@ -1,3 +1,5 @@
+@import "~bulma/sass/utilities/_all.sass";
+
 .j {
     fill: none;
     stroke-miterlimit: 10;
@@ -22,7 +24,21 @@
 .indexImageWrapper {
     position: relative;
     .index-image {
-        margin: -22% -10% 0 5%;
+        max-width: 700px;
         overflow: visible;
+        @include touch {
+            margin-left: 20px;
+            margin-right: -70px;
+            margin-bottom: -30px
+        }
+    }
+}
+
+.indexSwitch {
+    top: 100px;
+    left: 20%;
+    @include touch {
+        top: 15%;
+        left: 5%;
     }
 }

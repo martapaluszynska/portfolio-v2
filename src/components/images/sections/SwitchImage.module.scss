@@ -1,3 +1,4 @@
+@import "~bulma/sass/utilities/_all.sass";
 $border-width: 0.3rem;
 $width: 1.75rem - $border-width * 2;
 $height: 4.5rem - $border-width;
@@ -24,5 +25,11 @@ $switch-bg-color: #fff;
     }
     &.off {
         transform: translateY($height - $width - $border-width * 2);
+    }
+}
+
+.indexTextBoulbe {
+    @include touch {
+        display: none;
     }
 }
