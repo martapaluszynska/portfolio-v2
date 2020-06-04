@@ -1,7 +1,21 @@
 $color: white;
 
+.field:not(:last-child) {
+    position: relative;
+    margin-bottom: 2rem;
+    &.focused {
+        & .label {
+            transform: translateY(-100%);
+        }
+    }
+}
+
 .label {
     color: $color;
+    position: absolute;
+    margin-top: .5rem;
+    z-index: 0;
+    transition: transform 150ms ease-in-out;
 }
 
 .input {

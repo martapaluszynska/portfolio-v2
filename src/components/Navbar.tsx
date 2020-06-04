@@ -25,7 +25,18 @@ const Navbar = (props: NavbarProps) => {
         <Location>
             {({ location }) => (
                 <>
-                    <nav className={`navbar is-fixed-top is-spaced ${location.pathname === '/' || location.pathname === '/contact' ? 'is-primary is-transparent' : ''}`} role="navigation" aria-label="main navigation">
+                    <nav
+                        className={`
+                            navbar
+                            is-fixed-top
+                            is-spaced
+                            ${location.pathname === '/' || /contact/.test(location.pathname)
+                                ? 'is-primary is-transparent'
+                                : ''
+                            }`
+                        }
+                        role="navigation" aria-label="main navigation"
+                    >
                         <div className="navbar-brand">
                             <Link
                                 className="navbar-item"

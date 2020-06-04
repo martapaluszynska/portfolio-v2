@@ -23,7 +23,15 @@ export const Dots: React.FC<IProps> = ({ links }) => {
         <div className="dots-wrapper">
             <Location>
                 {({location}) => (
-                        <ul className={`dots ${location.pathname === '/' || location.pathname === '/contact' ? 'inverse' : ''}`}>
+                        <ul
+                            className={`
+                                dots
+                                ${location.pathname === '/' || /contact/.test(location.pathname)
+                                    ? 'inverse'
+                                    : ''
+                                }`
+                            }
+                        >
                             {links.map(({ name, link }) => (
                                 <li key={name}>
                                     <Link

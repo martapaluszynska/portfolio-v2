@@ -7,6 +7,10 @@ import styles from './contact.module.scss';
 import FormField from '../components/Form/FormField';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faFacebook,
+    faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
 
 import '../utils/fontawesome.js';
 
@@ -49,10 +53,6 @@ export default (props: ContactPageProps) => {
 
     const [formFields, setFormFields] = useState(InitialState);
 
-    // useEffect(() => {
-    //     console.log(formFields);
-    // }, [formFields])
-
     const handleTextInputChange = (index: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = event.currentTarget;
 
@@ -65,22 +65,24 @@ export default (props: ContactPageProps) => {
     return (
         <Layout mainElementClass="page--contact">
             <section className={`hero is-bold is-fullheight ${styles.heroContact}`}>
-                <div className="container contactContainer">
-                    <div className="columns contactColumns">
-                        <div className="column contactColumn">
-                            <h1 className="title">Contact</h1>
-                            <p className="subtitle">Feel free to get in touch with me</p>
-
-                            <div className="socialIcons">
-                                <div className="socialIcon">
-                                    <FontAwesomeIcon icon="coffee" />
-                                </div>
-                                <div className="socialIcon">
-                                    <FontAwesomeIcon icon="coffee" />
-                                </div>
+                <div className={`container ${styles.contact__container} `}>
+                    <div className={`columns`}>
+                        <div className={`column ${styles.contact__column}`}>
+                            <div className={`has-text-centered`}>
+                                <h1 className={`title is-spaced ${styles.header__title}`}>Contact</h1>
+                                <p className={`${styles.header__subtitle}`}>Feel free to get in touch with me</p>
                             </div>
 
-                            <form>
+                            <div className={`${styles.socialIcons}`}>
+                                <a href="google.com" className={`${styles.socialIcon}`}>
+                                    <FontAwesomeIcon icon={faLinkedin} />
+                                </a>
+                                <a href="google.com" className={`${styles.socialIcon}`}>
+                                    <FontAwesomeIcon icon={faFacebook} />
+                                </a>
+                            </div>
+
+                            <form className={`${styles.contactForm}`}>
                                 {Boolean(formFields.length) && formFields.map((field, index: number) => (
                                     <FormField
                                         required={field.required}
@@ -97,13 +99,20 @@ export default (props: ContactPageProps) => {
                                 ))}
                                 <div className="field is-grouped is-grouped-right">
                                     <p className="control">
-                                        <a className="button is-secondary" type="submit">
+                                        <a
+                                            className={`
+                                                button
+                                                is-secondary
+                                                ${styles.submitButton}
+                                            `}
+                                            type="submit"
+                                        >
                                             Submit
                                         </a>
                                     </p>
                                 </div>
                             </form>
-                            <div className="contactInfo">
+                            <div className={`${styles.aditionalInfo}`}>
                                 {`or\npaluszynska.marta@gmail.com\n+48 692 208 062`}
                             </div>
                         </div>
