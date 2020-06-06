@@ -1,35 +1,33 @@
-.h,
-.j,
-.o {
+.b,
+.f {
     fill: none;
 }
-.h,
-.i,
-.j,
-.o {
+.b,
+.h {
+    stroke: #04181d;
+}
+.b,
+.f,
+.h {
     stroke-miterlimit: 10;
-    stroke-width: 4px;
+    stroke-width: 2px;
 }
-.c {
-    fill: #b4c0d3;
+.g {
+    fill: #fff;
 }
-.d,
-.i {
-    fill: #5e734e;
+.d {
+    fill: #04181d;
 }
-.e {
-    fill: #416159;
+.f {
+    stroke: #fff;
 }
 .h {
-    stroke: #ebf1fb;
+    fill: #7b9069;
 }
-.i,
-.j {
-    stroke: #0e3239;
-}
-.k {
-    fill: #0e3239;
-}
-.o {
-    stroke: #fff;
+
+.svg {
+    margin-left: 0;
+    // margin-top: -15vh;
+    // max-width: 900px;
+    max-height: 70vh;
 }

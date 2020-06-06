@@ -4,6 +4,7 @@ import { Hero } from '../components/Hero';
 import { LifeImage } from '../components/images/LifeImage';
 import { Layout } from '../components/Layout';
 import '../styles/styles.scss';
+import LIFE_PAGE from '../data/life.json';
 
 interface ScoutsPageProps {
     data: {
@@ -20,7 +21,11 @@ export default (props: ScoutsPageProps) => {
 
     return (
         <Layout>
-            <Hero name="Life" tagline={'test'} image={<LifeImage />} />
+            <Hero
+                name="Life"
+                tagline={LIFE_PAGE.header.text}
+                image={<LifeImage />}
+            />
         </Layout>
     );
 };

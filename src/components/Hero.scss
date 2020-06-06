@@ -1,38 +1,10 @@
 .hero {
     cursor: url(../../static/Untitled-2.png), auto;
-    &__image {
-        svg {
-            max-width: 900px;
-        }
-    }
 
     .subtitle {
         font-size: 1rem;
         line-height: 1.5;
         max-width: 500px;
         margin: auto;
-    }
-
-    &.hero {
-        &--career {
-
-        }
-
-        &--scouts {
-
-        }
-
-        &--yoga {
-
-        }
-
-        &--firends {
-
-        }
-
-        &--contact {
-
-        }
-
     }
 }

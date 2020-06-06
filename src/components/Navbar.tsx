@@ -35,13 +35,13 @@ const Navbar = (props: NavbarProps) => {
                                 : ''
                             }`
                         }
-                        role="navigation" aria-label="main navigation"
+                        role="navigation"
+                        aria-label="main navigation"
                     >
                         <div className="navbar-brand">
                             <Link
                                 className={`navbar-item navbar__item`}
                                 to={home}
-                                activeClassName="active"
                             >
                                 {props.siteTitle}
                             </Link>

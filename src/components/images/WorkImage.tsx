@@ -34,8 +34,6 @@ export const WorkImage = () => {
 
         canvas.width = workArea.width;
         canvas.height = workArea.height;
-        // canvas.style.left = `${workArea.x}px`;
-        // canvas.height = workArea.x;
     }, []);
 
     useEffect(() => {
