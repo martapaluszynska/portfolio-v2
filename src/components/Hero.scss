@@ -2,10 +2,17 @@
     cursor: url(../../static/Untitled-2.png), auto;
     &__image {
         svg {
-            margin-left: -10%;
             max-width: 900px;
         }
     }
+
+    .subtitle {
+        font-size: 1rem;
+        line-height: 1.5;
+        max-width: 500px;
+        margin: auto;
+    }
+
     &.hero {
         &--career {
 

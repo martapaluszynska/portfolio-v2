@@ -39,8 +39,9 @@ const Navbar = (props: NavbarProps) => {
                     >
                         <div className="navbar-brand">
                             <Link
-                                className="navbar-item"
+                                className={`navbar-item navbar__item`}
                                 to={home}
+                                activeClassName="active"
                             >
                                 {props.siteTitle}
                             </Link>
@@ -54,7 +55,14 @@ const Navbar = (props: NavbarProps) => {
                         <div id="navbarMenu" className="navbar-menu">
                             <div className="navbar-end">
                                 {navigation.map(({ link, name }: NavbarLink, index: number) => (
-                                    <Link className="navbar-item" key={index} to={link}>{name}</Link>
+                                    <Link
+                                        className="navbar-item navbar__item"
+                                        key={index}
+                                        to={link}
+                                        activeClassName="active"
+                                    >
+                                            {name}
+                                    </Link>
                                 ))}
                             </div>
                         </div>

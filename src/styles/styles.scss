@@ -2,20 +2,20 @@
 // If need, change your variables before importing Bulma
 
 $career: (
-    'background': #EDCDE4,
-    'accent': #DC830C,
-    'text': #5D0923,
-    'interactive': #fff
-);
-
-$scouts: (
-    'background': #EDCDE4,
-    'accent': #DC830C,
-    'text': #5D0923,
+    'background': #edcde4,
+    'accent': #dc830c,
+    'text': #5d0923,
     'interactive': #fff,
 );
 
-$primary: #5D0923;
+$scouts: (
+    'background': #edcde4,
+    'accent': #dc830c,
+    'text': #5d0923,
+    'interactive': #fff,
+);
+
+$primary: #5d0923;
 $info: #fff;
 
 $body-family: 'Lato';
@@ -23,7 +23,6 @@ $body-family: 'Lato';
 
 $title-family: 'Lato';
 $title-weight: 700;
-
 
 // $primary: map-get($career, 'background');
 
@@ -34,7 +33,7 @@ $navbar-background-color: transparent;
 $navbar-item-color: map-get($career, 'text');
 $navbar-item-hover-color: darken(map-get($career, 'text'), 10%);
 $navbar-item-hover-background-color: transparent;
-@import "~bulma/bulma.sass";
+@import '~bulma/bulma.sass';
 
 p {
     white-space: pre-wrap;
@@ -53,4 +52,21 @@ body {
 
 .title {
     white-space: pre-line;
+}
+
+%baseTransition {
+    transition: 150ms ease-in-out;
+}
+
+@mixin scaleByOnHover($scaleHover, $scaleActive) {
+    &:hover {
+        transform: scale($scaleHover) scaleZ(1);
+    }
+    &.active {
+        transform: scale($scaleActive) scaleZ(1);
+    }
+    transform: scale(1);
+    -webkit-font-smoothing: subpixel-antialiased;
+    backface-visibility: hidden;
+    will-change: transform;
 }

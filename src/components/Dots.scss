@@ -1,8 +1,8 @@
-@import "~bulma/sass/utilities/_all.sass";
+@import '~bulma/sass/utilities/_all.sass';
 @import '../styles/styles.scss';
 
-$width: .5rem;
-$color: #5D0E2C;
+$width: 0.5rem;
+$color: #5d0e2c;
 $color-darker: #{darken($color, 10%)};
 $colot-inverse: #fff;
 
@@ -23,7 +23,7 @@ $colot-inverse: #fff;
         margin: auto;
         &-wrapper {
             position: absolute;
-            top: calc(100vh - 68px);
+            top: calc(100vh - 85px);
             width: 100%;
             z-index: 1000;
             @include touch {
@@ -33,19 +33,30 @@ $colot-inverse: #fff;
     }
 
     &-text {
+        $scale: 1.4;
+
         font-size: 24px;
         font-weight: 600;
         color: $color;
         padding: 1rem;
+        display: inline-block;
+        transform-origin: center;
+        @extend %baseTransition;
+        @include scaleByOnHover($scale, $scale);
+
+        .inverse & {
+            color: $colot-inverse;
+            &:hover {
+                color: $colot-inverse;
+            }
+        }
+
         &:hover {
             color: $color-darker;
         }
-        .inverse & {
-            color: $colot-inverse;
-        }
+
         &.active {
             line-height: 0;
-            font-size: 64px;
         }
     }
 }

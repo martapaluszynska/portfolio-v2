@@ -44,9 +44,10 @@ $color: white;
     padding: 0 0.5rem;
     color: $color;
     transition: color, transform 150ms ease-in-out;
+    transform: scale3d(1, 1, 1);
     &:hover {
         color: darken($color, 15%);
-        transform: scale(1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
     }
 }
 
