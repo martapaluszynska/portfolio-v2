@@ -9,7 +9,7 @@ interface Coordinate {
 export const LifeImage = () => {
     const pupilRef = useRef<SVGCircleElement | null>(null);
     const svgRef = useRef<SVGSVGElement | null>(null);
-    const [following, setFollowing] = useState(true);
+    const [following, setFollowing] = useState(false);
     const [mousePosition, setMousePosition] = useState<Coordinate | undefined>(undefined);
 
     const getCoordinates = (event: MouseEvent) => {
