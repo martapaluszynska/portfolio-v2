@@ -5,11 +5,22 @@ $color: white;
 .hero--contact {
     background-color: $bg-color;
     color: $color;
+    position: relative;
     :global .title {
         color: $color;
     }
     :global .subtitle {
         color: $color;
+    }
+    &::before {
+        position: absolute;
+        left: 0;
+        bottom: 100%;
+        content: '';
+        border-bottom: 100px solid $bg-color;
+        border-left: 100px solid transparent;
+        transform-origin: left;
+        transform: scaleX(20);
     }
 }
 

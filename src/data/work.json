@@ -37,25 +37,25 @@
         },
         "data": [
             {
-                "title": "Graphic communication Co-worker IKEA",
+                "title": "Graphic communication Co-worker\nIKEA",
                 "date": "from 2017",
-                "text": "presenting the IKEA offer by graphic communication, informing customers about marketing campaigns, planning and implementing customer guidance, sales supporting by emphasizing the benefits of products, implementation of commercial lighting, using large format printers and cutting plotters, triaining IKEA Co-workers in interpersonal communication.",
+                "text": "Graphic communication Co-worker IKEA from 2017\n· creating IKEA brand awareness through graphic communication\n· informing customers about marketing campaigns,\n· planning and implementing customer guidance,\n· sales supporting by emphasizing the benefits of products,\n· implementation of commercial lighting,\n· using large format printers and cutting plotters,\n· triaining IKEA Co-workers in interpersonal communication",
                 "image": "chair"
             },
             {
-                "title": "Graphic Designer X-5 Productions (creative agency)",
+                "title": "Graphic Designer\nX-5 Productions (creative agency)",
                 "date": "2015 - 2017",
                 "text": "creating event scenery based on license graphics and Key Visuals (Disney, WARNER BROS, Hasbro, Nickelodeon, Animaccord, HiT Entertainment) creating posters, banners, leaflets, textile walls, roll-ups, creating advertising campaigns for shopping malls visualizations of advertising gadgets.",
                 "image": "billboard"
             },
             {
-                "title": "Graphic Designer Milutka (accesories for children)",
+                "title": "Graphic Designer\nMilutka (accesories for children)",
                 "date": "2016",
                 "text": "web and social media arts.",
                 "image": "social"
             },
             {
-                "title": "Graphic Designer - voluntering The Polish Scouting and Guiding Association (ZHP)",
+                "title": "Graphic Designer - voluntering\nThe Polish Scouting and Guiding Association (ZHP)",
                 "date": "2015-2020",
                 "text": "Logo & design of the „Zuchowe Wieści” magazine",
                 "image": "scout-news-logo",
@@ -72,14 +72,14 @@
             {
                 "icon": "paper",
                 "title": "2d",
-                "programs": "Adobe In Design, Adobe Illustrator, Adobe Photoshop, Adobe Bridge, Corel",
-                "type": "grafika wektorowa, obróbka fotografii"
+                "programs": "Adobe Xd, Adobe In Design, Adobe Illustrator, Adobe Photoshop, Adobe Bridge, Corel",
+                "type": "design and aplication prototyping, vector graphics, raster graphics, logotype design"
             },
             {
                 "icon": "cube",
                 "title": "3d",
                 "programs": "Autodesk Inventor, Autodesk 3ds Max, Solidworks, SketchUp",
-                "type": "modelowanie, wizualizacje, dokumentacja techniczna, analiza oświetlenia"
+                "type": "modeling, visualizations, technical documentation, lighting analysing"
             }
         ]
     },

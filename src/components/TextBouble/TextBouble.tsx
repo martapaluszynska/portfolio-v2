@@ -26,7 +26,12 @@ export const TextBouble = ({ text, top, left, link, outlined, flipped, className
                 ${className}
             `}
         >
-            <a className={styles.textBouble__text} href={link}>{text}</a>
+            {link ? (
+                <a className={styles.textBouble__text} href={link}>{text}</a>
+            ) : (
+                    <span className={styles.textBouble__text}>{text}</span>
+                )}
+
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96.6 96.6">
                 <path d="M51.4 3.1a45.3 45.3 0 11-34.2 78.1L2.5 84.3l5.6-15.2A45.3 45.3 0 0151.4 3z" />
             </svg>

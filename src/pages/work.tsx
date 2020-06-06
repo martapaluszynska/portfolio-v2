@@ -23,6 +23,7 @@ import { XFiveImage } from './../components/images/sections/work/XFiveImage';
 import WORK_PAGE from '../data/work.json';
 import '../styles/styles.scss';
 import styles from './Work.module.scss';
+import ContactForm from './contactForm';
 
 interface IndexPageProps {
     data: {
@@ -82,10 +83,13 @@ const IndexPage = (props: IndexPageProps) => {
     return (
         <Layout>
             <Hero name="Ścieżka zawodowa" tagline={`From product design, through to graphic design, to UX/UI, my skillset is forever evolving and continually adaptable in it's approach. My passion is to combine beauty, simplicity and usability.`} image={<WorkImage />}>
-                <TextBouble text={header.cta} top="10%" left="70%" />
+                <TextBouble flipped={true} text={header.cta} top="10%" left="20%" />
             </Hero>
             {/* EDUCATION */}
             <section className={`section ${styles.sectionEducation}`}>
+                <div className={`${styles.scrollForMore}`}>
+                    <a>scroll for more!</a>
+                </div>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 1366 190.3"
@@ -94,7 +98,7 @@ const IndexPage = (props: IndexPageProps) => {
                         bottom: `100%`,
                         left: 0,
                         width: `100%`,
-                        zIndex: -1,
+                        zIndex: 1,
                     }}
                 >
                     <path
@@ -105,8 +109,10 @@ const IndexPage = (props: IndexPageProps) => {
                 <div className="container">
                     <div className="columns is-centered is-relative">
                         <div className="column is-half">
-                            <h2 className="title has-text-centered">{education.title}</h2>
-                            <p className="">{education.text}</p>
+                            <div className={`${styles.header}`}>
+                                <h2 className="title has-text-centered">{education.title}</h2>
+                                <p className="text">{education.text}</p>
+                            </div>
                         </div>
 
                     </div>
@@ -116,11 +122,13 @@ const IndexPage = (props: IndexPageProps) => {
             </section>
             {/* WORK EXPERIENCE */}
             <section className="section">
-                <TextBouble text={work['file-link'].name} link={work['file-link'].link} top="-100px" left="60%" />
+                <TextBouble text={work['file-link'].name} link={work['file-link'].link} top="-7%" left="60%" />
                 <div className="container">
                     <div className="columns is-centered">
                         <div className="column is-half">
-                            <h2 className="title has-text-centered">{work.title}</h2>
+                            <div className={`${styles.header}`}>
+                                <h2 className="title has-text-centered">{work.title}</h2>
+                            </div>
                         </div>
                     </div>
                     <TimeLine rows={mappedWorkExperience()} alternatingNth={2} />
@@ -131,7 +139,9 @@ const IndexPage = (props: IndexPageProps) => {
                 <div className="container">
                     <div className="columns is-centered">
                         <div className="column">
-                            <h2 className={`title has-text-centered ${styles.skillsTitle}`}>{skills.title}</h2>
+                            <div className={`${styles.header}`}>
+                                <h2 className={`title has-text-centered`}>{skills.title}</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -169,7 +179,8 @@ const IndexPage = (props: IndexPageProps) => {
 
                 </div>
             </section>
-            <section className={`footer ${styles.sectionContact}`}>
+            <ContactForm />
+            {/* <section className={`footer ${styles.sectionContact}`}>
                 <div className="container">
                     <div className="columns">
                         <div className="column is-half">
@@ -177,7 +188,7 @@ const IndexPage = (props: IndexPageProps) => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </Layout>
     );
 };
@@ -211,13 +222,15 @@ const SkillsItems = ({ skills }: SkillsProps) => {
         <div className="container">
             <div className="columns">
                 {mappedSkills().map((skill: SkillsData) => (
-                    <div className="skill column" key={skill.title}>
-                        <div>
-                            {skill.icon}
-                            <h3 className="title">{skill.title}</h3>
+                    <div className={`skill column ${styles.skill__item}`} key={skill.title}>
+                        <div className={`${styles.skill__header}`}>
+                            <div className={`${styles.skillIcon}`}>
+                                {skill.icon}
+                            </div>
+                            <h3 className={`title ${styles.skillTitle}`}>{skill.title}</h3>
                         </div>
-                        <p>{skill.programs}</p>
-                        <p>{skill.type}</p>
+                        <p className={`${styles.skill__text}`}>{skill.programs}</p>
+                        <p className={`${styles.skill__text}`}>{skill.type}</p>
                     </div>
                 ))}
             </div>

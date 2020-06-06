@@ -20,6 +20,14 @@ $outline-boder: $border-width solid $color;
         color: $color;
         font-weight: 900;
         white-space: pre-wrap;
+        width: 80%;
+        z-index: 1;
+
+        &:active,
+        &:hover,
+        &:focus {
+            color: $color;
+        }
     }
 
     &.flipped {

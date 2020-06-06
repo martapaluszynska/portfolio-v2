@@ -47,9 +47,9 @@ const OneColumn = ({ rows, alternatingNth = 0 }: ColumnComponent) => {
                             {image}
                         </div>
                         <div className="column is-half timeline__item">
-                            <h3 className="title is-4">{title}</h3>
-                            <p>{text}</p>
-                            <p>{date}</p>
+                            <h3 className="title is-6">{title}</h3>
+                            <p className="date">{date}</p>
+                            <p className="text">{text}</p>
                             {link && (
                                 <a href={link.link} className="button is-primary" rel="noopener norefferer" target="_blank">{link.name}</a>
                             )}
@@ -71,8 +71,8 @@ const TwoColumns: React.FC<ColumnComponent> = ({ rows, children }) => {
                         ({ title, text, date, link, image }, index: number) => (
                             <div key={index} className="columns timeline__row">
                                 <div className="column timeline__item">
-                                    <h3 className="title is-4">{title}</h3>
-                                    <p>{text}</p>
+                                    <h3 className="title is-6">{title}</h3>
+                                    <p className="text">{text}</p>
                                     <p>{date}</p>
                                     {link && (
                                         <a href={link.link} className="button is-info" rel="noopener norefferer" target="_blank">{link.name}</a>

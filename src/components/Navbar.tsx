@@ -61,7 +61,7 @@ const Navbar = (props: NavbarProps) => {
                                         to={link}
                                         activeClassName="active"
                                     >
-                                            {name}
+                                        {name}
                                     </Link>
                                 ))}
                             </div>
@@ -69,11 +69,6 @@ const Navbar = (props: NavbarProps) => {
                     </nav>
                     <>
                         <Dots links={dotsNavigation} />
-                        {location.pathname === '/work' && (
-                            <div className="scroll-for-more">
-                                <a href="#">scroll for more!</a>
-                            </div>
-                        )}
                     </>
 
                 </>

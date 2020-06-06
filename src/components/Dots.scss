@@ -40,7 +40,7 @@ $colot-inverse: #fff;
         color: $color;
         padding: 1rem;
         display: inline-block;
-        transform-origin: center;
+        transform-origin: center 40px;
         @extend %baseTransition;
         @include scaleByOnHover($scale, $scale);
 
@@ -56,6 +56,7 @@ $colot-inverse: #fff;
         }
 
         &.active {
+            transform-origin: center 23px;
             line-height: 0;
         }
     }

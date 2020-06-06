@@ -1,6 +1,6 @@
 $color: white;
-$bgc-primary: #5D0E2C;
-$bgc-secondary: #0E3239;
+$bgc-primary: #5d0e2c;
+$bgc-secondary: #0e3239;
 
 .section {
     &--education,
@@ -10,7 +10,6 @@ $bgc-secondary: #0E3239;
         :global .title {
             color: $color;
         }
-        
     }
 
     &--education,
@@ -19,11 +18,22 @@ $bgc-secondary: #0E3239;
     }
 
     &--education {
+        margin-top: 5rem;
         :global .timeline__item {
             &::before,
             &::after {
                 background-color: $color;
             }
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: -5rem;
+            left: 0;
+            right: 0;
+            height: 10rem;
+            background-color: #b3c79b33;
+            z-index: -1;
         }
         &::after {
             position: absolute;
@@ -52,7 +62,47 @@ $bgc-secondary: #0E3239;
     }
 }
 
-
 .skills-title {
     margin-bottom: 5rem;
+}
+
+.scroll-for-more {
+    top: -145px;
+    position: absolute;
+    z-index: 9999;
+    left: 4%;
+    a {
+        color: #fff;
+        cursor: default;
+    }
+}
+
+.header {
+    :global .title {
+        margin-bottom: 6rem;
+    }
+    :global .text {
+        margin-bottom: 5.5rem;
+    }
+}
+
+.skill {
+    &__item {
+        max-width: 400px;
+        margin: auto;
+    }
+
+    &__header {
+        text-align: center;
+        margin-bottom: 3.75rem;
+    }
+
+    &-title,
+    &-icon {
+        margin-bottom: 3.75rem;
+    }
+
+    &__text {
+        margin-bottom: 1.5rem;
+    }
 }
