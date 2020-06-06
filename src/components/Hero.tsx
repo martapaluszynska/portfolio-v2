@@ -3,6 +3,7 @@ import { Dots } from './Dots';
 import './Hero.scss';
 import { WorkImage } from './images/WorkImage';
 import { TextBouble } from './TextBouble/TextBouble';
+import { Location } from '@reach/router';
 
 interface IProps {
     name: string;
@@ -64,7 +65,7 @@ export const Hero: React.FC<IProps> = ({ name, tagline, style = 'is-seconadry', 
                         <div
                             ref={imageWrapperRef}
                             className="column is-full text-center has-text-centered hero__image"
-                            style={{cursor: 'none'}}
+                            style={{ cursor: 'none' }}
                             onMouseEnter={startCursorSwap}
                             onMouseLeave={stopCursorSwap}
                         >
@@ -82,19 +83,48 @@ export const Hero: React.FC<IProps> = ({ name, tagline, style = 'is-seconadry', 
                     )}
                 </div>
             </div>
-            <img
-                src="../../hand.png"
-                className="cursor"
-                style={{
-                    left: state.x,
-                    opacity: `${cursorSwapped ? 1 : 0}`,
-                    pointerEvents: 'none',
-                    position: 'absolute',
-                    top: state.y,
-                    transform: 'translate(-95%, -30%)',
-                    transition: `opacity .15s ease-out`,
+            <Location>
+                {({ location }) => {
+                    let currentImage;
+                    const images = [{
+                        path: /work/,
+                        image: '../../pencil.svg',
+                        transform: [0, 0],
+                    },
+                    {
+                        path: /life/,
+                        image: '../../wool.svg',
+                        transform: [-30, -50],
+                    },
+                    {
+                        path: /balance/,
+                        image: '../../hand.svg',
+                        transform: [-95, -30],
+                    }];
+
+                    for (const v of images) {
+                        if (v.path.test(location.pathname)) {
+                            currentImage = v;
+                        }
+                    }
+
+                    return (
+                        <img
+                            src={currentImage?.image}
+                            className="cursor"
+                            style={{
+                                left: state.x,
+                                opacity: `${cursorSwapped ? 1 : 0}`,
+                                pointerEvents: 'none',
+                                position: 'absolute',
+                                top: state.y,
+                                transform: `translate(${currentImage?.transform[0] ?? 0}%, ${currentImage?.transform[1] ?? 0}%)`,
+                                transition: `opacity .15s ease-out`,
+                            }}
+                        />
+                    );
                 }}
-            />
+            </Location>
             {children}
         </section>
     );

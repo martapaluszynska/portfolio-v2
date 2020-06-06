@@ -95,8 +95,10 @@ export const WorkImage = () => {
     useEffect(() => {
         const canvas: any = canvasRef.current;
         canvas.addEventListener('mouseup', exitPaint);
+        // canvas.addEventListener('mouseleave', exitPaint);
         return () => {
             canvas.removeEventListener('mouseup', exitPaint);
+            // canvas.removeEventListener('mouseleave', exitPaint);
         };
     }, [exitPaint]);
 
