@@ -1,34 +1,42 @@
-.f,
-.p,
-.r {
+.g,
+.n {
     fill: none;
 }
+.e {
+    stroke: #04181d;
+}
+.d,
 .e,
 .f,
-.p {
+.g {
     stroke-miterlimit: 10;
+}
+.e,
+.g {
     stroke-width: 4px;
 }
 .c,
-.d {
-    fill: #416159;
+.m {
+    fill: #04181d;
 }
 .d {
-    opacity: 0.2;
-}
-.e {
-    fill: #193639;
+    fill: #7b9069;
 }
 .e,
 .f {
-    stroke: #0e3239;
+    fill: #fff;
 }
-.m {
-    fill: #cfacbe;
-}
-.p {
+.g {
     stroke: #f4f4f4;
 }
-.q {
+.i {
+    fill: #cfacbe;
+}
+.l,
+.m {
     stroke: none;
+}
+
+.balance__image {
+    max-height: 60vh;
 }
