@@ -24,6 +24,7 @@ import WORK_PAGE from '../data/work.json';
 import '../styles/styles.scss';
 import styles from './Work.module.scss';
 import ContactForm from './contactForm';
+import cv from '../../static/marta_paluszynska_CV_ANG_PL.pdf';
 
 interface IndexPageProps {
     data: {
@@ -123,7 +124,7 @@ const IndexPage = (props: IndexPageProps) => {
             </section>
             {/* WORK EXPERIENCE */}
             <section className="section">
-                <TextBouble text={work['file-link'].name} link={work['file-link'].link} top="-7%" left="60%" />
+                <TextBouble text={work['file-link'].name} link={cv} top="-7%" left="60%" />
                 <div className="container">
                     <div className="columns is-centered">
                         <div className="column is-half">

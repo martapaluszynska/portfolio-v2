@@ -32,7 +32,7 @@ export default (props: IndexPageProps) => {
                             </div>
                             <div className={`column ${styles.columnRelative}`}>
                                 <div className={styles.indexText}>
-                                    <h1 className="title">{INDEX_PAGE.title}</h1>
+                                    <h1 className="title is-size-4">{INDEX_PAGE.title}</h1>
                                     <p>
                                         {INDEX_PAGE.text}
                                     </p>

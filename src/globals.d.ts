@@ -8,6 +8,11 @@ declare module '*.svg' {
   export = content;
 }
 
+declare module '*.pdf' {
+  const content: string;
+  export = content;
+}
+
 declare module '*.ico' {
   const content: string;
   export = content;

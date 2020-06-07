@@ -1,8 +1,7 @@
 import React from 'react';
 import { SectionRow } from './../../models/site';
 import './Timeline.scss';
-
-type RichText = string;
+import certificate from '../../../static/MP.Certificate.eduweb.pl.pdf';
 
 enum POSITIONS {
     left = 'left',
@@ -75,7 +74,13 @@ const TwoColumns: React.FC<ColumnComponent> = ({ rows, children }) => {
                                     <p className="text">{text}</p>
                                     <p>{date}</p>
                                     {link && (
-                                        <a href={link.link} className="button is-info" rel="noopener norefferer" target="_blank">{link.name}</a>
+                                        <>
+                                            {link.link === 'certificate' ? (
+                                                <a href={certificate} className="button is-info" rel="noopener norefferer" target="_blank">{link.name}</a>
+                                            ) : (
+                                                <a href={link.link} className="button is-info" rel="noopener norefferer" target="_blank">{link.name}</a>
+                                            )}
+                                        </>
                                     )}
                                 </div>
                             </div>

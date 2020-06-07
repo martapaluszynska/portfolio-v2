@@ -9,12 +9,12 @@
         "image": "test",
         "data": [
             {
-                "title": "UX basic course",
+                "title": "UX design course",
                 "text": "Eduweb",
                 "date": "2020",
                 "link": {
                     "name": "confirmation",
-                    "link": "https://google.com"
+                    "link": "certificate"
                 }
             },
             {

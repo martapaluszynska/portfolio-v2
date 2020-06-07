@@ -5,13 +5,13 @@ export const ZuchoweWiesci = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="346" viewBox="0 0 339.38 257.48">
             <defs>
-                <linearGradient id="a" x1="0" x2=".87" y1=".64" y2=".4" gradientUnits="objectBoundingBox">
+                <linearGradient id="zwa" x1="0" x2=".87" y1=".64" y2=".4" gradientUnits="objectBoundingBox">
                     <stop offset="0" stopColor="#5e734e" />
                     <stop offset=".99" stopColor="#9cb189" />
                 </linearGradient>
             </defs>
             <g transform="translate(-39.55 -6.47)">
-                <path fill="url(#a)" d="M310.8 138a12.42 12.42 0 01-9.53-9.47l-.01-.08A109.35 109.35 0 00171 45.77c-57.83 12.78-95.31 70.22-83.62 128.29a109.35 109.35 0 00131.3 85.14q2.56-.58 5.06-1.27a89.63 89.63 0 0153.24 1.37A63.09 63.09 0 10310.8 138z" />
+                <path fill="url(#zwa)" d="M310.8 138a12.42 12.42 0 01-9.53-9.47l-.01-.08A109.35 109.35 0 00171 45.77c-57.83 12.78-95.31 70.22-83.62 128.29a109.35 109.35 0 00131.3 85.14q2.56-.58 5.06-1.27a89.63 89.63 0 0153.24 1.37A63.09 63.09 0 10310.8 138z" />
                 <ellipse cx="104.14" cy="30.19" className={styles.b} rx="104.14" ry="30.19" transform="translate(82.4 200.08)" />
                 <path d="M146.69 226.5c-14.73 0-26.67-2.96-26.67-15.21v-29.16c0-12.25 11.94-16.48 26.67-16.48 14.73 0 26.67 4.23 26.67 16.48v29.15c0 12.26-11.94 15.22-26.67 15.22z" className={styles.c} />
                 <ellipse cx="15.42" cy="3.95" className={styles.d} rx="15.42" ry="3.95" transform="translate(131.32 169.34)" />
