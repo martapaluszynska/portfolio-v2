@@ -68,4 +68,5 @@ export interface Skills {
 export interface Volunteering {
     title: string;
     text: string;
+    textadd: string;
 }

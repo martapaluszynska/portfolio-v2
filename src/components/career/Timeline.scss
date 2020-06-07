@@ -1,3 +1,5 @@
+@import "~bulma/sass/utilities/_all.sass";
+
 $dot-size: 1rem;
 $timeline-color: #0E3239;
 
@@ -6,16 +8,28 @@ $timeline-color: #0E3239;
     height: $dot-size;
     border-radius: 50%;
     background-color: $timeline-color;
+    @include touch {
+        width: $dot-size / 1.5;
+        height: $dot-size / 1.5;
+    }
 }
 
 %line {
     background-color: $timeline-color;
     width: $dot-size / 4;
+    @include touch {
+        width: $dot-size / 8;
+    }
 }
 
 .timeline {
     $padding-x: 5%;
     $padding-y: 7%;
+
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 5%;
+
     &__row {
         &:last-child {
             .timeline__item {
@@ -36,6 +50,13 @@ $timeline-color: #0E3239;
                         left: auto;
                         right: 0;
                         transform: translateX(50%);
+
+                        @include touch {
+                            left: 0;
+                            right: auto;
+                            transform: translateX(-50%);
+                        }
+
                     }
                 }
                 &__image {
@@ -54,6 +75,9 @@ $timeline-color: #0E3239;
     &__item {
         position: relative;
         padding-left: $padding-x;
+        @include touch {
+            padding-left: 15%;
+        }
         &::before,
         &::after {
             content: '';
@@ -102,6 +126,10 @@ $timeline-color: #0E3239;
 
         &--main {
             justify-content: space-evenly;
+        }
+
+        @include touch {
+            display: none;
         }
     }
 

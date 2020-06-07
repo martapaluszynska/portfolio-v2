@@ -3,7 +3,7 @@ import styles from './MilutkaImage.module.scss';
 
 export const MilutkaImage = () => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="346.6" height="208">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 346.6 208" style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}>
             <defs>
                 <linearGradient id="a" y1=".5" x2="1" y2=".5" gradientUnits="objectBoundingBox">
                     <stop offset="0" stopColor="#5e734e" />

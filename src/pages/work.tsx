@@ -111,13 +111,14 @@ const IndexPage = (props: IndexPageProps) => {
                         <div className="column is-half">
                             <div className={`${styles.header}`}>
                                 <h2 className="title has-text-centered">{education.title}</h2>
+                                <div className="is-hidden-desktop">
+                                    <EducationImage/>
+                                </div>
                                 <p className="text">{education.text}</p>
                             </div>
                         </div>
-
                     </div>
                     <TimeLine rows={education.data} mainImage={<EducationImage />} />
-
                 </div>
             </section>
             {/* WORK EXPERIENCE */}
@@ -128,6 +129,9 @@ const IndexPage = (props: IndexPageProps) => {
                         <div className="column is-half">
                             <div className={`${styles.header}`}>
                                 <h2 className="title has-text-centered">{work.title}</h2>
+                                <div className="is-hidden-desktop">
+                                    <MilutkaImage />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -163,32 +167,19 @@ const IndexPage = (props: IndexPageProps) => {
             <section className="section section--volunteering">
                 <div className="container">
                     <div className="columns is-vcentered">
-                        <div
-                            className="column is-half section-image"
-                            style={{
-                                // marginTop: `-25%`
-                            }}
-                        >
+                        <div className="column is-half section-image">
                             <TreesImage />
                         </div>
                         <div className="column is-half">
                             <h2 className="title">{volunteering.title}</h2>
                             <p className="">{volunteering.text}</p>
+                            <p className="">{volunteering.textadd}</p>
                         </div>
                     </div>
 
                 </div>
             </section>
             <ContactForm />
-            {/* <section className={`footer ${styles.sectionContact}`}>
-                <div className="container">
-                    <div className="columns">
-                        <div className="column is-half">
-                            Contact
-                        </div>
-                    </div>
-                </div>
-            </section> */}
         </Layout>
     );
 };
@@ -230,7 +221,7 @@ const SkillsItems = ({ skills }: SkillsProps) => {
                             <h3 className={`title ${styles.skillTitle}`}>{skill.title}</h3>
                         </div>
                         <p className={`${styles.skill__text}`}>{skill.programs}</p>
-                        <p className={`${styles.skill__text}`}>{skill.type}</p>
+                        <p className={`${styles.skill__text} has-text-weight-bold`}>{skill.type}</p>
                     </div>
                 ))}
             </div>

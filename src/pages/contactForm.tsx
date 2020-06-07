@@ -56,10 +56,10 @@ const ContactForm = () => {
                         </div>
 
                         <div className={`${styles.socialIcons}`}>
-                            <a href="google.com" className={`${styles.socialIcon}`}>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/marta-paluszy%C5%84ska-7b80a5aa" className={`${styles.socialIcon}`}>
                                 <FontAwesomeIcon icon={faLinkedin} />
                             </a>
-                            <a href="google.com" className={`${styles.socialIcon}`}>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/marta.paluszynska" className={`${styles.socialIcon}`}>
                                 <FontAwesomeIcon icon={faFacebook} />
                             </a>
                         </div>

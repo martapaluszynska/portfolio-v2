@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    name: `Martus folio`,
+    name: `Marta Paluszyńska`,
     tagline: `test = 😹 `,
     navbarLinks: [
       {
@@ -33,6 +33,7 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-tslint`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

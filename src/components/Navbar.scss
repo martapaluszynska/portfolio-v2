@@ -1,9 +1,13 @@
+@import "~bulma/sass/utilities/_all.sass";
 @import '../styles/styles.scss';
 
 $color: #5D0E2C;
 
 .navbar {
     font-weight: 700;
+    &-item {
+        background-color: transparent !important;
+    }
 }
 
 .navbar {
@@ -19,5 +23,20 @@ $color: #5D0E2C;
         $scale-active: 1.5;
         @extend %baseTransition;
         @include scaleByOnHover(1.4, 1.4);
+
+        .is-primary.is-transparent & {
+            color: #fff !important;
+        }
+        
+
+        @include touch {
+            transform: none;
+            transition: none;
+            &.active,
+            &:hover {
+                transform: none;
+                transition: none;
+            }
+        }
     }
 }

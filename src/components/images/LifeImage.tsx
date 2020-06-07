@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import styles from './LifeImage.module.scss';
 
 interface Coordinate {
@@ -20,12 +20,15 @@ export const LifeImage = () => {
     };
 
     const followMouse = useCallback(
-        (newMousePosition: Coordinate) => {
-            const percentageX = newMousePosition.x / svgRef?.current?.clientWidth * 100;
-            const percentageY = newMousePosition.y / svgRef?.current?.clientHeight * 100;
+        (event: SVGSVGElementEventMap['mousemove']) => {
+            const percentageX = (event.pageX - svgRef?.current?.getBoundingClientRect().left) / svgRef?.current?.clientWidth;
+            const percentageY = (event.pageY - svgRef?.current?.getBoundingClientRect().top) / svgRef?.current?.clientHeight;
 
-            pupilRef.current?.setAttribute('cx', `${38.75 + percentageX / svgRef?.current?.clientWidth * 10}%`);
-            pupilRef.current?.setAttribute('cy', `${72.75 + (percentageY / svgRef?.current?.clientHeight * 10)}%`);
+            const positionOffsetX = 0.3875 + (percentageX / ((0.4 - 0.3875) * 10000));
+            const positionOffsetY = 0.7275 + (percentageY / ((0.8 - 0.7275) * 1000));
+
+            pupilRef.current?.setAttribute('cx', `${positionOffsetX * 100}%`);
+            pupilRef.current?.setAttribute('cy', `${positionOffsetY * 100}%`);
         },
         [mousePosition],
     );
@@ -35,7 +38,7 @@ export const LifeImage = () => {
             if (following) {
                 const newMousePosition = getCoordinates(event);
                 if (mousePosition && newMousePosition) {
-                    followMouse(mousePosition);
+                    followMouse(event);
                     setMousePosition(newMousePosition);
                 }
             }
@@ -43,11 +46,23 @@ export const LifeImage = () => {
         [following, mousePosition, followMouse],
     );
 
+    const onMouseMove = useMemo(() => {
+        return (e: any) => {
+            if (e.type === 'touchmove') {
+                e.preventDefault();
+            } else {
+                requestAnimationFrame(() => follow(e));
+            }
+        };
+    }, [mousePosition]);
+
     useEffect(() => {
         const svg = svgRef.current;
-        svg?.addEventListener('mousemove', follow);
+        svg?.addEventListener('pointermove', onMouseMove, {passive: true});
+        svg?.addEventListener('touchmove', onMouseMove);
         return () => {
-            svg?.removeEventListener('mousemove', follow);
+            svg?.removeEventListener('pointermove', onMouseMove);
+            svg?.removeEventListener('touchmove', onMouseMove);
         };
 
     }, [follow]);
@@ -98,6 +113,9 @@ export const LifeImage = () => {
             className={`${styles.svg}`}
             viewBox="0 0 371.6 319.8"
             ref={svgRef}
+            style={{
+                marginTop: -68,
+            }}
         >
             <defs>
                 <linearGradient id="a" x2="1" y1=".5" y2=".5" gradientUnits="objectBoundingBox">

@@ -46,7 +46,7 @@ const OneColumn = ({ rows, alternatingNth = 0 }: ColumnComponent) => {
                         <div className="column is-half timeline__image">
                             {image}
                         </div>
-                        <div className="column is-half timeline__item">
+                        <div className="column is-half margin-auto timeline__item">
                             <h3 className="title is-6">{title}</h3>
                             <p className="date">{date}</p>
                             <p className="text">{text}</p>
@@ -66,7 +66,7 @@ const TwoColumns: React.FC<ColumnComponent> = ({ rows, children }) => {
         <>
             <div className="columns">
                 <div className="column is-half timeline__image timeline__image--main">{children}</div>
-                <div className="column is-half">
+                <div className="column is-half margin-auto">
                     {rows?.length && rows.map(
                         ({ title, text, date, link, image }, index: number) => (
                             <div key={index} className="columns timeline__row">

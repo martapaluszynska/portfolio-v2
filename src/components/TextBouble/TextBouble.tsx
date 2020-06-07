@@ -3,21 +3,25 @@ import styles from './TextBouble.module.scss';
 
 interface Props {
     text: string;
-    top: string;
-    left: string;
+    top?: string;
+    left?: string;
+    bottom?: string;
+    right?: string;
     link?: string;
     flipped?: boolean;
     outlined?: boolean;
     className?: string;
 }
 
-export const TextBouble = ({ text, top, left, link, outlined, flipped, className }: Props) => {
+export const TextBouble = ({ text, top, left, bottom, right, link, outlined, flipped, className }: Props) => {
 
     return (
         <div
             style={{
                 top,
                 left,
+                bottom,
+                right,
             }}
             className={`
                 ${styles.textBouble}

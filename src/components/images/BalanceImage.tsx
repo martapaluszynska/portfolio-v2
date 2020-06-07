@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import styles from './BalanceImage.module.scss';
 import { Lottie, ReactLottieConfig, ReactLottiePlayingState } from '@crello/react-lottie';
 import animationData from '../../data/joga1.json';
+import { AnimationEventCallback, AnimationEventName, AnimationConfigWithPath, AnimationConfigWithData, AnimationDirection, AnimationSegment, AnimationItem } from 'lottie-web';
+
+import throttle from 'lodash.throttle';
 
 export const BalanceImage = () => {
 
@@ -15,12 +18,66 @@ export const BalanceImage = () => {
 
     const defaultOptions: ReactLottieConfig = {
         animationData,
-        loop: true,
+        loop: false,
+        autoplay: false,
     };
 
+    const animRef = useRef<AnimationItem>({} as AnimationItem);
+    const containerRef = useRef<HTMLDivElement | null>(null);
+
+    const flexit = useCallback(
+        (event: MouseEvent) => {
+            if (!containerRef.current || !animRef.current) {
+                return;
+            }
+
+            const containerClient = containerRef.current.getBoundingClientRect();
+            const anim = animRef.current;
+            const mouseX = (event.pageX - containerClient.left) / containerClient?.width;
+
+            if (mouseX < 0) {
+                return;
+            }
+
+            anim.goToAndStop(Math.floor(anim.totalFrames / 2 * mouseX), true);
+        },
+        [],
+    );
+
+    const onMouseMove = useMemo(() => {
+        return (e: any) => {
+            if (e.type === 'touchmove') {
+                e.preventDefault();
+            } else {
+                requestAnimationFrame(() => flexit(e));
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (!containerRef.current) {
+            return;
+        }
+
+        const container = containerRef.current;
+
+        container?.addEventListener('pointermove', onMouseMove);
+        container?.addEventListener('touchmove', onMouseMove);
+        return () => {
+            container?.removeEventListener('pointermove', onMouseMove);
+            container?.removeEventListener('touchmove', onMouseMove);
+        };
+
+    }, [flexit]);
+
     return (
-        <div style={{ position: 'relative' }}>
+        <div
+            ref={containerRef}
+            style={{ position: 'relative' }}
+        >
             <Lottie
+                animationRef={animRef}
+                speed={1}
                 style={{
                     position: 'absolute',
                 }}
@@ -75,10 +132,6 @@ export const BalanceImage = () => {
                         <path d="M398.4 446.5l-5.2-8 121.6-6.5 8.5 7.8-124.9 6.7z" className={styles.l} />
                         <path d="M514 434l-117.2 6.3 2.7 4.1 119-6.4-4.5-4m1.5-4l12.7 11.5-130.8 7-7.8-11.8 125.9-6.8z" className={styles.m} />
                     </g>
-                    {/* <path d="M599.2 462.3l-8.7 3.3-8.8 7s-7.8 5.6-12.1 6-6.3 2-4 3.4 12.9.9 12.9.9h29.8s8.5.3 9.8-1.8-1.8-6.4-1.9-9.6 1.9-4 1.9-4l1-5.2zM861 468.5s6.7 4 7.8 5 5 4.9 6 5.6 11.6 3.2 12.8 3.8a3 3 0 011.3 3.3c-.4.5-14.8-.2-14.8-.2s-19.5-2.5-24.4-4.6c-2.4-4.3 0-11.5 0-11.5s1-4.2 3.7-3.7a65.2 65.2 0 017.7 2.3z" className={styles.i} /> */}
-                    {/* <path fill="#5d0923" d="M745.5 261.2a48.3 48.3 0 0132.3 12.7c9.1 8.2 12.4 17.5 17.4 31.8a293.9 293.9 0 0110.6 35.7c3.5 14.8 2.6 18 5 23.7 4.3 10.2 6.6 10.5 13.7 23.3 3.2 5.9 4.1 4.4 16.5 32.4 10.1 23 6.2 18.1 8.7 24.2a130.7 130.7 0 007.4 16.2c1 1.7 6.8 7.3 3.2 7.5-6.2.3-9.7 15.7-10.6 12.7a105.6 105.6 0 00-7.5-18c-1.8-3.6-1.8-3.6-10.9-17.1-9.8-14.7-12.7-14.9-19.3-27.3-5-9.5-5.2-6.2-10.2-15.6-7.8-14.7-12.2-18-19.1-31.9-1.2-2.4-3.5-6-7.7-18.9-2.3-7.2-6.4-11.3-10.3-18-3.8-6.7-4-10-7.4-10.3-6-.4-10.9 8.2-19 22.5a222.2 222.2 0 01-45.4 59 124.7 124.7 0 00-15.3 18.4 116 116 0 01-9.3 12.8c-7.7 7.9-11.2 5.8-24.6 14.6-14 9.2-14.2 14.2-23 15.5-4 .7-8.9.4-10.6 3.5-1.7 3 .4 6.5-1.9 9.3-1 1.4-1.7 3.4-3.4 2.9-2.6-.8-3.2-5.5-6.2-9.8-3.7-5.2-7.8-4.8-8-7.4-.4-3.4 6.3-5.6 15.2-11.2 6.1-4 10.4-8 19-15.9 8.5-8 12.7-11.9 17.7-18.3 4.6-6 6.2-7.7 13-12.8 3.7-2.8 13.7-16.5 15.6-19 8.6-11.5 5.1-7.5 9-18.3 11.5-32.1 11-22.1 15.6-35.8 7.4-22.7 6.8-37 23.3-58.8 1-1.3 4-14 26.5-14.3z" /> */}
-                    {/* <path d="M740.7 261.4c-1.7-1.4-6.1 2.6-18 3.5s-34.8 3.4-34.8 3.4l-25.5-3.7-18-9-3.8-7.8s1.2-49.8 0-63.5-4-34.5-4-34.5-4.4-23-4.4-24-.3-18.3 0-19.6-9-23.6-14.1-25.5a6.1 6.1 0 00-8.6 5.3c0 3.1 3.4 15.6 3.4 18s-1.9 2.2-3.4.7-5.6-8.1-5.6-8.1-2.2 0-2.2 2.8 3.7 10 3.7 10 3.8 8.3 7.8 11.4 4.1 9 4.9 14.4 2.3 28.9 0 35.4 2.6 33.3 2.6 33.3l.3 23.7s-5 16.5-5.6 24.5.6 24 .6 24 1.3 9.3.3 10.3-9.6 0-9.6 0 1-4.4.7-6.6-3.2-4.6-5.7-3.7-15.2-1.7-15.2-1.7a111 111 0 00-17.8.2 48.4 48.4 0 00-15.2 5s-10.6 4.3-11.8 12.7-1.3 9.3 0 13.4 4.6 6.5 0 8.7-10 4-7.5 10.6 4.8 11.5 9.2 11.8c2 .1 7.3-.3 10.4-1.9 3.4-1.7 5.7-6 6.2-6.8a4.2 4.2 0 012.2-1.7 12.7 12.7 0 003 4.5 21.7 21.7 0 004 3c3 2.1 4.8 3.3 7.3 4 2.7.7 5.5.7 5.6.3 0-.3-1-.6-3.3-1.6-2.2-1-2-1-8.2-4.6a13.5 13.5 0 01-3.3-2.2 10.5 10.5 0 01-2.4-3.6 9.8 9.8 0 014.3 2.2c5 4 12.6 3 14.8 2.2s9-4.8 11.8-7.8 3-6.9 3.4-7.5 5.3-.3 6.6.3 5.9 9.4 6.5 10.3 3.1 2.2 2.8 5.9-1.4 13.4-1.6 19.6-.9 12 .4 23.4c.4 3.3 5.3 12.8 5.2 18.6s0 11.2-1 16.2 1 19.9 1.7 28.8c1 13.5 3.9 29 3.7 31.3s-4.4 5.8-4.4 5.8l-10.2 4.7-13.4 2.7s-8.7 2.5-8.7 3.4 15.5-.2 15.5-.2h10.3l13-1.2s7.7-2.2 8.5-4.7-.6-8.8-.6-8.8 1.8-12 2.3-20.1 0-57 0-57-.1-17 .2-24.8c.4-8.5-.4-13.4-.2-14.7s2.3-7.2 7-8 15.8 2.2 22.7.7 9-9.5 12.7-11.3 11-2.5 14-2 16.8 1.8 27.4 1.6c31.8-.6 27.4-48.5 28.3-57.5s-5.6-15.6-7.2-17z" className={styles.i} /> */}
-                    {/* <path fill="#f4f4f4" d="M662.4 264.6c1-1.4 27.8.4 29 2s5.1 15.4 3 31-2 34.9-4.3 36.5-7-.5-10.3 1.4-4.5 3-7.7 7.6c-5.2 7.4-25.2 8.6-31 3.7-5.5-4.6-17.6-15.3-19.9-16.3l-7.4-3c.6.2-4.8-.3-5.7-1.4s-.6-6.3 0-7.4 10 4 10 4l9.5 4.1s21 11 26 .2c8.6-18.6-24.1-35.9-24.1-35.9s-11.9-6.7-12.8-7.8-.9-4.8-.5-5.5 11 4.2 11 4.2 7.5 3.6 14.7 2.8 8.8-.1 14-4.3 5.5-14.6 6.5-16z" /> */}
                 </g >
             </svg >
         </div>

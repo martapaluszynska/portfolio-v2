@@ -35,6 +35,11 @@ $navbar-item-hover-color: darken(map-get($career, 'text'), 10%);
 $navbar-item-hover-background-color: transparent;
 @import '~bulma/bulma.sass';
 
+.margin-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 p {
     white-space: pre-wrap;
 }

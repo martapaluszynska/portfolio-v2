@@ -28,6 +28,6 @@
 #draw-canvas {
     position: absolute;
     // border: 1px solid red;
-    top: 6%;
+    top: calc(6% - 58px);
     left: 26.25%;
 }

@@ -5,7 +5,7 @@
     },
     "education": {
         "title": "Education",
-        "text": "I graduated design studies at the University of Science and Technology and Academy of Fine Arts. Studying at such different universities let me to look at design from different perspectives. I easily combine beautiful and useful.",
+        "text": "I graduated my design studies from the University of Science & Technology and, at the Academy of Fine Arts. Being exposed to such a wide variety of teachings, has allowed me to look at design from a number of different perspectives, where I can apply both beauty and usability to my approach and skill.",
         "image": "test",
         "data": [
             {
@@ -32,7 +32,7 @@
     "work-experience": {
         "title": "Work experience",
         "file-link": {
-            "name": "Click here to give\nCV in pdf format",
+            "name": "Click here to give CV in pdf format",
             "link": "https://google.com"
         },
         "data": [
@@ -45,7 +45,7 @@
             {
                 "title": "Graphic Designer\nX-5 Productions (creative agency)",
                 "date": "2015 - 2017",
-                "text": "creating event scenery based on license graphics and Key Visuals (Disney, WARNER BROS, Hasbro, Nickelodeon, Animaccord, HiT Entertainment) creating posters, banners, leaflets, textile walls, roll-ups, creating advertising campaigns for shopping malls visualizations of advertising gadgets.",
+                "text": "· creating event scenery based on license graphics and Key Visuals (Disney, WARNER BROS, Hasbro, Nickelodeon, Animaccord, HiT Entertainment),\n· creating posters, banners, leaflets, textile walls, roll-ups,\n· creating advertising campaigns for shopping malls,\n· visualizations of advertising gadgets",
                 "image": "billboard"
             },
             {
@@ -85,6 +85,7 @@
     },
     "volunteering": {
         "title": "Volunteering",
-        "text": "For many year I used to be a Scout Guide of The Polish Scouting and Guiding Association. I was the head of a team of leaders, I organized courses and workshops, but what I remember the best were summer camps with the Brownies group, I was the leader of.\n\nIn those days I learned to work in a group and I convinced many times that everything is achievable with a well-coordinated team."
+        "text": "For a number of years, I was heavily involved as a Scout Guide for The Polish Scouting and Guiding Association. As the coordinator for the associations team leaders, I was responsible for, and oversaw the implementation and management of courses and workshops. Including delivering teaching on interpersonal communication and team building. But my fondest memories are of our summer camps with the Brownies group, which I was the leader of.",
+        "textadd": "From myFrom my time and participation with the Association, it has equipped me to be able to work in a group environment. And that through team building and cooperation, every problem can be solved!"
     }
 }

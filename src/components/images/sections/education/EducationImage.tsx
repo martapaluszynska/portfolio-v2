@@ -4,7 +4,7 @@ import styles from './EducationImage.module.scss';
 export const EducationImage = () => {
     return (
 
-        <svg xmlns="http://www.w3.org/2000/svg" width="403.7" height="330.6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 403.7 330.6">
             <defs>
                 <linearGradient id="a" x1=".2" y1=".5" x2="1.1" y2=".5" gradientUnits="objectBoundingBox">
                     <stop offset="0" stopColor="#5e734e" />
