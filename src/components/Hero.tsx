@@ -1,9 +1,7 @@
-import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
-import { Dots } from './Dots';
-import './Hero.scss';
-import { WorkImage } from './images/WorkImage';
-import { TextBouble } from './TextBouble/TextBouble';
 import { Location } from '@reach/router';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+
+import './Hero.scss';
 
 interface IProps {
     name: string;

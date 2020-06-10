@@ -1,5 +1,4 @@
-@import "~bulma/sass/utilities/_all.sass";
-@import '../styles/styles.scss';
+@import '../styles/abstract.scss';
 
 .navigation-arrows {
     @include touch {

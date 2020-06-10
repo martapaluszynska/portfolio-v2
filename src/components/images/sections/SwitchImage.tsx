@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import styles from './SwitchImage.module.scss';
+import React from 'react';
 import { TextBouble } from './../../TextBouble/TextBouble';
+import styles from './SwitchImage.module.scss';
 
 interface SwitchImageProps {
     top?: string;

@@ -4,6 +4,10 @@ module.exports = {
     tagline: `test = 😹 `,
     navbarLinks: [
       {
+        name: 'about',
+        link: '/'
+      },
+      {
         name: 'work',
         link: '/work'
       },
@@ -18,10 +22,6 @@ module.exports = {
       {
         name: 'contact',
         link: '/contact'
-      },
-      {
-        name: 'about',
-        link: '/'
       },
       {
         name: '404',

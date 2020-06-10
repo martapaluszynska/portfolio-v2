@@ -20,11 +20,10 @@ import { IkeaImage } from './../components/images/sections/work/IkeaImage';
 import { MilutkaImage } from './../components/images/sections/work/MilutkaImage';
 import { XFiveImage } from './../components/images/sections/work/XFiveImage';
 
-import WORK_PAGE from '../data/work.json';
-import '../styles/styles.scss';
-import styles from './Work.module.scss';
-import ContactForm from './contactForm';
 import cv from '../../static/marta_paluszynska_CV_ANG_PL.pdf';
+import WORK_PAGE from '../data/work.json';
+import ContactForm from './contactForm';
+import styles from './Work.module.scss';
 
 interface IndexPageProps {
     data: {

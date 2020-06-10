@@ -1,5 +1,4 @@
-@import "~bulma/sass/utilities/_all.sass";
-@import '../styles/styles.scss';
+@import '../styles/abstract.scss';
 
 $color: #5D0E2C;
 
@@ -11,8 +10,19 @@ $color: #5D0E2C;
 }
 
 .navbar {
+    box-shadow: $box-shadow;
+    padding: 0.5rem 1rem;
+    @include touch {
+        padding: 0;
+    }
+    &:not(.is-primary) {
+        background-color: #f0f4eb !important;
+    }
     &.is-primary.is-transparent {
-        background-color: transparent;
+        background-color: #5d0e2c;
+    }
+    &.is-index {
+        background-color: #0E3239 !important;
     }
 
     &__item {

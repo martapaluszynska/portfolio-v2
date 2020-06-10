@@ -1,9 +1,12 @@
 import { graphql, StaticQuery } from 'gatsby';
-import React, { ReactNode } from 'react';
-import Navbar from './Navbar';
-import { PageContextProvider } from './../Context/GlobalContext';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import favicon from '../../static/icons/favicon.ico';
+import Dots from '../components/Dots';
+import { PageContextProvider } from './../Context/GlobalContext';
+import Navbar from './Navbar';
+
+import '../styles/styles.scss';
 
 interface IProps {
     mainElementClass?: string;
@@ -52,8 +55,15 @@ export const Layout: React.FC<IProps> = ({ mainElementClass, children }) => (
                         <header>
                             <Navbar siteTitle={name} menuLinks={navbarLinks} />
                         </header>
-                        <main className={mainElementClass} style={{overflow: 'hidden'}}>
+                        <main
+                            className={`${mainElementClass}`}
+                            style={{
+                                overflow: 'hidden',
+                                position: 'relative',
+                            }}
+                        >
                             {children}
+                            <Dots />
                         </main>
                     </PageContextProvider>
                 </>

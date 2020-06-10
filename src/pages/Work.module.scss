@@ -19,7 +19,7 @@ $bgc-secondary: #0e3239;
 
     &--education {
         margin-top: 5rem;
-        :global .timeline__item {
+        :global .column {
             &::before,
             &::after {
                 background-color: $color;

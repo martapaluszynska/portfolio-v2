@@ -3,7 +3,6 @@ import * as React from 'react';
 import { Hero } from '../components/Hero';
 import { Layout } from '../components/Layout';
 import INDEX_PAGE from '../data/index.json';
-import '../styles/styles.scss';
 
 import IndexImage from './../components/images/sections/IndexImage';
 import styles from './indexPage.module.scss';

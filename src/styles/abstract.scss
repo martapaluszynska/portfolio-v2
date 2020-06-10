@@ -1,0 +1,54 @@
+// If need, change your variables before importing Bulma
+$career: (
+    'background': #edcde4,
+    'accent': #dc830c,
+    'text': #5d0923,
+    'interactive': #fff,
+);
+
+$scouts: (
+    'background': #edcde4,
+    'accent': #dc830c,
+    'text': #5d0923,
+    'interactive': #fff,
+);
+
+$primary: #5d0923;
+$info: #fff;
+
+$body-family: 'Lato';
+// $body-color: map-get($career, 'text');
+
+$title-family: 'Lato';
+$title-weight: 700;
+
+// $primary: map-get($career, 'background');
+
+$navbar-padding-vertical: 1rem;
+$navbar-padding-horizontal: 2rem;
+
+$navbar-background-color: transparent;
+$navbar-item-color: map-get($career, 'text');
+$navbar-item-hover-color: darken(map-get($career, 'text'), 10%);
+$navbar-item-hover-background-color: transparent;
+
+
+$box-shadow: 0 0.5em 1em -0.125em rgba(black, 0.1), 0 0px 0 1px rgba(black, 0.02);
+%baseTransition {
+    transition: 150ms ease-in-out;
+}
+
+@mixin scaleByOnHover($scaleHover, $scaleActive) {
+    &:hover {
+        transform: scale($scaleHover) scaleZ(1);
+    }
+    &.active {
+        transform: scale($scaleActive) scaleZ(1);
+    }
+    transform: scale(1);
+    -webkit-font-smoothing: subpixel-antialiased;
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+@import "bulma/sass/utilities/_all.sass";

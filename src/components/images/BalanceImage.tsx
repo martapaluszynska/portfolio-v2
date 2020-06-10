@@ -1,10 +1,8 @@
-import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
-import styles from './BalanceImage.module.scss';
 import { Lottie, ReactLottieConfig, ReactLottiePlayingState } from '@crello/react-lottie';
+import { AnimationItem } from 'lottie-web';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import animationData from '../../data/joga1.json';
-import { AnimationEventCallback, AnimationEventName, AnimationConfigWithPath, AnimationConfigWithData, AnimationDirection, AnimationSegment, AnimationItem } from 'lottie-web';
-
-import throttle from 'lodash.throttle';
+import styles from './BalanceImage.module.scss';
 
 export const BalanceImage = () => {
 
@@ -33,13 +31,17 @@ export const BalanceImage = () => {
 
             const containerClient = containerRef.current.getBoundingClientRect();
             const anim = animRef.current;
-            const mouseX = (event.pageX - containerClient.left) / containerClient?.width;
+            const mouseX = (event.pageX - containerClient.left) / (containerClient?.width / 2);
+            const mouseY = (event.pageY - containerClient.top) / (containerClient?.height / 2);
 
-            if (mouseX < 0) {
+            const arcPosition = Math.atan2(mouseX, mouseY);
+
+            if (mouseX < 0 || mouseX > 1 || arcPosition > 1 ) {
                 return;
             }
 
-            anim.goToAndStop(Math.floor(anim.totalFrames / 2 * mouseX), true);
+            anim.goToAndStop(Math.floor(anim.totalFrames / 2 * arcPosition), true);
+
         },
         [],
     );
@@ -69,6 +71,10 @@ export const BalanceImage = () => {
         };
 
     }, [flexit]);
+
+    useEffect(() => {
+        animRef.current?.goToAndStop(0, true);
+    }, []);
 
     return (
         <div

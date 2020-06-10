@@ -1,0 +1,70 @@
+@import '../styles//abstract.scss';
+
+$width: 12px;
+$color: #fff;
+
+%is-square {
+    width: $width;
+    padding-top: $width;
+}
+
+.dot {
+    @extend %is-square;
+    display: none;
+    position: relative;
+    margin: 0 0.5rem;
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    &::before {
+        display: block;
+        border: 2px solid $color;
+    }
+    &::after {
+        display: none;
+        background-color: $color;
+        width: calc(100% - 6px);
+        height: calc(100% - 6px);
+        top: 3px;
+        left: 3px;
+    }
+
+    &s {
+        display: flex;
+        justify-content: center;
+        &__wrapper {
+            position: absolute;
+            padding-bottom: 1rem;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    
+    }
+
+    @include touch {
+        display: block;
+    }
+}
+
+.primary {
+    &::before {
+        border-color: $primary;
+    }
+    &::after {
+        background-color: $primary;
+    }
+}
+
+.active {
+    &::after {
+        display: block;
+    }
+}

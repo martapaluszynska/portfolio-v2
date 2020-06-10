@@ -1,5 +1,4 @@
-@import '~bulma/sass/utilities/_all.sass';
-@import '../styles/styles.scss';
+@import '../styles/abstract.scss';
 
 $width: 0.5rem;
 $color: #5d0e2c;
@@ -11,7 +10,7 @@ $colot-inverse: #fff;
     padding-top: $width;
 }
 
-.dot {
+.link {
     @extend %is-square;
     background-color: $text;
     border-radius: 50%;
@@ -55,7 +54,7 @@ $colot-inverse: #fff;
             color: $color-darker;
         }
 
-        &.active {
+        :global &.active {
             transform-origin: center 23px;
             line-height: 0;
         }

@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
-import styles from './contact.module.scss';
-import FormField from '../components/Form/FormField';
-
+import { faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faFacebook,
-    faLinkedin,
-} from '@fortawesome/free-brands-svg-icons';
+import React, { useState } from 'react';
+import FormField from '../components/Form/FormField';
+import styles from './contact.module.scss';
 
 import '../utils/fontawesome.js';
 

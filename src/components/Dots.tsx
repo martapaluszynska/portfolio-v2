@@ -1,56 +1,53 @@
+import { useLocation } from '@reach/router';
 import { Link } from 'gatsby';
-import React, {useEffect} from 'react';
-import './Dots.scss';
-import { usePageContext } from './../Context/GlobalContext';
+import React from 'react';
 import useSiteMetadata from './../Hooks/useSiteMetadata';
-import { Location } from '@reach/router';
+import styles from './Dots.module.scss';
 
-interface ILink {
-    name: string;
-    link: string;
-}
+const activeLinks = [
+    'about',
+    'work',
+    'life',
+    'balance',
+    'contact',
+];
 
-interface IProps {
-    links: ILink[];
-}
+const primaryPages = [
+    // 'about',
+    // 'work',
+    'life',
+    'balance',
+    // 'contact',
+];
 
-export const Dots: React.FC<IProps> = ({ links }) => {
+const Dots = () => {
 
-    const pageData = usePageContext();
-    const { name: siteName } = useSiteMetadata();
+    const location = useLocation();
+    const metaData = useSiteMetadata();
+    const links = (metaData.navbarLinks as Array<{ name: string; link: string }>).filter((link) => activeLinks.includes(link.name));
 
     return (
-        <div className="dots-wrapper">
-            <Location>
-                {({location}) => {
-                    if (/contact/.test(location.pathname)) {
-                        return;
-                    }
-                    return (
-                        <ul
-                            className={`
-                                dots
-                                ${location.pathname === '/' || /contact/.test(location.pathname)
-                                    ? 'inverse'
-                                    : ''
-                                }`
+        <div className={`${styles.dots__wrapper}`}>
+            <div className={`${styles.dots}`}>
+                {links?.map(({ link }, i) => (
+                    <Link
+                        key={i}
+                        to={link}
+                        className={`
+                            ${styles.dot}
+                            ${primaryPages.includes(metaData.navbarLinks.filter((item: { name: string; link: string }) => item.link === location.pathname)[0].name) ?
+                                styles.primary
+                                :
+                                ''
                             }
-                        >
-                            {links.map(({ name, link }) => (
-                                <li key={name}>
-                                    <Link
-                                        className="dot-text"
-                                        to={link}
-                                        activeClassName="active"
-                                    >
-                                        {name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    );
-                }}
-            </Location>
+                        `}
+                        activeClassName={`${styles.active}`}
+                    />
+                ))}
+            </div>
         </div>
+
     );
 };
+
+export default Dots;
