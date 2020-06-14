@@ -6,6 +6,10 @@ $color: white;
     background-color: $bg-color;
     color: $color;
     position: relative;
+    overflow: hidden;
+    @include touch {
+        padding-top: 3rem;
+    }
     :global .title {
         color: $color;
     }

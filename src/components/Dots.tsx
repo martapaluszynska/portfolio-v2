@@ -35,7 +35,7 @@ const Dots = () => {
                         to={link}
                         className={`
                             ${styles.dot}
-                            ${primaryPages.includes(metaData.navbarLinks.filter((item: { name: string; link: string }) => item.link === location.pathname)[0].name) ?
+                            ${primaryPages.includes(metaData.navbarLinks.filter((item: { name: string; link: string }) => item.link === location.pathname)[0]?.name) ?
                                 styles.primary
                                 :
                                 ''

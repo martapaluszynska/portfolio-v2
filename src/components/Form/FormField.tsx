@@ -80,6 +80,7 @@ export default ({
                     <p
                         className={`
                             help
+                            ${styles.helpText}
                             ${error ? 'is-danger' : ''}
                             ${success ? 'is-success' : ''}
                         `}

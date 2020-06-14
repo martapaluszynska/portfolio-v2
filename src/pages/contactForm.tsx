@@ -1,6 +1,8 @@
 import { faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useCallback, useEffect, useState } from 'react';
+import * as yup from 'yup';
 import FormField from '../components/Form/FormField';
 import styles from './contact.module.scss';
 
@@ -30,17 +32,87 @@ const InitialState = [
     },
 ];
 
+const schema = yup.object().shape({
+    name: yup.string().required(),
+    email: yup.string().required().email(),
+    message: yup.string().required().max(250),
+});
+
+const InitialErrors = {
+    name: [],
+    email: [],
+    message: [],
+};
+
+interface Errors {
+    [key: string]: yup.ValidationError[];
+}
+
 const ContactForm = () => {
     const [formFields, setFormFields] = useState(InitialState);
+    const [loading, setLoading] = useState(false);
+    const [errors, setErrors] = useState<Errors>(InitialErrors);
+
+    const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setLoading(true);
+        const url = `${process.env.GATSBY_API_URL}/send`;
+
+        axios.post(
+            url,
+            {
+                name: formFields[0].value,
+                email: formFields[1].value,
+                message: formFields[2].value,
+            },
+        )
+            .then((res) => {
+                setFormFields(InitialState);
+            })
+            .catch((err) => {
+                console.log(errors);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    };
 
     const handleTextInputChange = (index: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = event.currentTarget;
-
         const newForm = [...formFields];
         newForm[index].value = value;
-
         setFormFields(newForm);
     };
+
+    const refFields = {
+        name: formFields[0].value,
+        email: formFields[1].value,
+        message: formFields[2].value,
+    };
+
+    const checkForm = useCallback(
+        () => {
+            schema.validate(refFields, { abortEarly: false })
+                .then(() => {
+                    setErrors(InitialErrors);
+                })
+                .catch(({inner}) => {
+                    const errorsCopy = { ...errors };
+                    Object.keys(errorsCopy).forEach((errorName) =>{
+                        errorsCopy[errorName] = inner.filter((error: yup.ValidationError) => error.path === errorName);
+                    });
+                    setErrors(errorsCopy);
+                });
+        },
+        [formFields],
+    );
+
+    useEffect(checkForm, [checkForm]);
+
+    useEffect(() => {
+        console.log(errors);
+    }, [errors]);
+
     return (
         <section className={`hero is-bold is-fullheight ${styles.heroContact}`}>
             <div className={`container ${styles.contact__container} `}>
@@ -60,7 +132,7 @@ const ContactForm = () => {
                             </a>
                         </div>
 
-                        <form className={`${styles.contactForm}`}>
+                        <form className={`${styles.contactForm}`} onSubmit={sendEmail}>
                             {Boolean(formFields.length) && formFields.map((field, index: number) => (
                                 <FormField
                                     required={field.required}
@@ -71,22 +143,24 @@ const ContactForm = () => {
                                     value={field.value}
                                     onChange={handleTextInputChange(index)}
                                     helpText={
-                                        field.errors[0]
+                                        errors[field.name][0]?.message
                                     }
                                 />
                             ))}
                             <div className="field is-grouped is-grouped-right">
                                 <p className="control">
-                                    <a
+                                    <button
                                         className={`
                                                 button
                                                 is-secondary
+                                                ${loading ? 'is-loading' : ''}
                                                 ${styles.submitButton}
                                             `}
                                         type="submit"
+                                        disabled={Object.keys(errors).reduce((p, c) => [...p, ...errors[c]], [] as any).length}
                                     >
                                         Submit
-                                    </a>
+                                    </button>
                                 </p>
                             </div>
                         </form>
