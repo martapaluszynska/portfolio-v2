@@ -127,11 +127,11 @@ export const WorkImage = () => {
                         <stop offset=".3" stopColor="#5e734e" />
                         <stop offset="1" stopColor="#9cb189" />
                     </linearGradient>
-                    <linearGradient id="b" x1=".3" x2="1.4" y1="-9.7" y2="-9.2" xlinkHref="#a" />
+                    <linearGradient id="f" x1=".3" x2="1.4" y1="-9.7" y2="-9.2" xlinkHref="#a" />
                 </defs>
                 <g transform="translate(-207.6 -19.8)">
                     <ellipse cx="143.1" cy="144.2" fill="url(#a)" rx="143.1" ry="144.2" transform="rotate(-64.1 620 -412.3)" />
-                    <ellipse cx="173.4" cy="174.8" fill="url(#b)" rx="173.4" ry="174.8" transform="rotate(-64.1 456 55)" />
+                    <ellipse cx="173.4" cy="174.8" fill="url(#f)" rx="173.4" ry="174.8" transform="rotate(-64.1 456 55)" />
                     <path fill="none" stroke="#04181d" strokeMiterlimit="10" strokeWidth="4" d="M951.2 357.4l-540 .6L360 486h646z" />
                     <path d="M910.3 407.4c22.6 0 40.8-6.8 40.8-35.1v-67.4c0-28.2-18.2-38-40.8-38-22.6 0-40.9 9.8-40.9 38v67.4c0 28.3 18.3 35 40.9 35z" className={styles.d} />
                     <ellipse cx="23.6" cy="9.1" className={styles.e} rx="23.6" ry="9.1" transform="translate(886 277.3)" />

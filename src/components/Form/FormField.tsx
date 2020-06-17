@@ -2,17 +2,18 @@ import React, { InputHTMLAttributes, useState } from 'react';
 import styles from './FormField.module.scss';
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
+    onChange?: (event: any) => void;
+    value?: string;
     helpText?: string;
     success?: boolean;
     error?: boolean;
     required?: boolean;
     iconLeft?: JSX.Element;
     iconRight?: JSX.Element;
-    value?: string;
     label?: string;
 }
 
-export default ({
+const FormField = ({
     success,
     error,
     iconLeft,
@@ -21,9 +22,9 @@ export default ({
     label,
     value,
     required,
+    onChange,
     ...other
 }: IInputProps) => {
-
     const [focused, setFocused] = useState(false);
 
     const handleFocus = () => {
@@ -63,6 +64,8 @@ export default ({
                     `}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
+                    onChange={onChange}
+                    value={value}
                     {...other}
                 />
                 {iconLeft && (
@@ -92,3 +95,5 @@ export default ({
         </div>
     );
 };
+
+export default FormField;

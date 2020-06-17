@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Hero } from '../components/Hero';
 import { LifeImage } from '../components/images/LifeImage';
 import { Layout } from '../components/Layout';
@@ -20,6 +21,16 @@ export default (props: ScoutsPageProps) => {
 
     return (
         <Layout>
+            <Helmet
+                bodyAttributes={{
+                    class: 'bg--secondary',
+                }}
+            >
+                <meta name="theme-color" content="#E4EBDB" />
+                <meta name="msapplication-navbutton-color" content="#E4EBDB" />
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="#E4EBDB" />
+            </Helmet>
             <Hero
                 name="Life"
                 tagline={LIFE_PAGE.header.text}

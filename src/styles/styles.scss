@@ -36,6 +36,22 @@ body {
     }
 }
 
+.bg {
+    &--secondary {
+        background-color: #E4EBDB;
+    }
+    &--green {
+        background-color: #0E3239;
+    }
+    &--primary {
+        background-color: $primary;
+    }
+    &--work {
+        background-color: #E4EBDB;
+        background-image: linear-gradient(to bottom, #E4EBDB 0%, #E4EBDB 28%, #fff 28%, #fff 90%, $primary 90%);
+    }
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,

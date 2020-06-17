@@ -1,6 +1,5 @@
-import { graphql } from 'gatsby';
 import * as React from 'react';
-import { Hero } from '../components/Hero';
+import { Helmet } from 'react-helmet';
 import { Layout } from '../components/Layout';
 import INDEX_PAGE from '../data/index.json';
 
@@ -22,6 +21,16 @@ export default (props: IndexPageProps) => {
 
     return (
         <Layout mainElementClass="page--index">
+            <Helmet
+                bodyAttributes={{
+                    class: 'bg--green',
+                }}
+            >
+                <meta name="theme-color" content="#0E3239" />
+                <meta name="msapplication-navbutton-color" content="#0E3239" />
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="#0E3239" />
+            </Helmet>
             <section className={`hero is-bold is-fullheight ${styles.heroIndex}`}>
                 <div className="hero-body">
                     <div className="container">

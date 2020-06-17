@@ -14,7 +14,9 @@ interface IProps {
 
 export const Layout: React.FC<IProps> = ({ mainElementClass, children }) => (
     <>
-        <Helmet>
+        <Helmet
+            // bodyAttributes={{}}
+        >
             <link rel="icon" href={favicon} />
             {/* <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
             <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
@@ -31,8 +33,7 @@ export const Layout: React.FC<IProps> = ({ mainElementClass, children }) => (
             <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
             <link rel="manifest" href="/manifest.json" />
             <meta name="msapplication-TileColor" content="#ffffff" />
-            <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-            <meta name="theme-color" content="#ffffff" /> */}
+            <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />*/}
         </Helmet>
         <StaticQuery
             query={graphql`
@@ -63,7 +64,7 @@ export const Layout: React.FC<IProps> = ({ mainElementClass, children }) => (
                             }}
                         >
                             {children}
-                            <Dots />
+                            {/* <Dots /> */}
                         </main>
                     </PageContextProvider>
                 </>

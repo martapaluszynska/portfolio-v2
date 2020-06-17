@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
+import { Helmet } from 'react-helmet';
 
 import { TimeLine } from '../components/career';
 import { Layout } from '../components/Layout';
@@ -82,6 +83,16 @@ const IndexPage = (props: IndexPageProps) => {
 
     return (
         <Layout>
+            <Helmet
+                bodyAttributes={{
+                    class: 'bg--work',
+                }}
+            >
+                <meta name="theme-color" content="#E4EBDB" />
+                <meta name="msapplication-navbutton-color" content="#E4EBDB" />
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="#E4EBDB" />
+            </Helmet>
             <Hero name="Ścieżka zawodowa" tagline={`From product design, through to graphic design, to UX/UI, my skillset is forever evolving and continually adaptable in it's approach. My passion is to combine beauty, simplicity and usability.`} image={<WorkImage />}>
                 <TextBouble flipped={true} text={header.cta} top="10%" left="20%" />
             </Hero>
@@ -112,7 +123,7 @@ const IndexPage = (props: IndexPageProps) => {
                             <div className={`${styles.header}`}>
                                 <h2 className="title has-text-centered">{education.title}</h2>
                                 <div className="is-hidden-desktop">
-                                    <EducationImage/>
+                                    <EducationImage />
                                 </div>
                                 <p className="text">{education.text}</p>
                             </div>
@@ -160,7 +171,7 @@ const IndexPage = (props: IndexPageProps) => {
                         width: `100%`,
                     }}
                 >
-                    <path d="M0 0a320 320 0 00319.8 310.5 319.4 319.4 0 00249.3-119.4C664.3 73.1 719 4.1 950.6 0z" fill="#0e3239"/>
+                    <path d="M0 0a320 320 0 00319.8 310.5 319.4 319.4 0 00249.3-119.4C664.3 73.1 719 4.1 950.6 0z" fill="#0e3239" />
                 </svg>
             </section>
             {/* VOLUNTEERING */}
