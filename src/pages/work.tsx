@@ -85,7 +85,7 @@ const IndexPage = (props: IndexPageProps) => {
         <Layout>
             <Helmet
                 bodyAttributes={{
-                    class: 'bg--work',
+                    class: 'bg--work'
                 }}
             >
                 <meta name="theme-color" content="#E4EBDB" />
@@ -94,7 +94,7 @@ const IndexPage = (props: IndexPageProps) => {
                 <meta name="apple-mobile-web-app-status-bar-style" content="#E4EBDB" />
             </Helmet>
             <Hero name="Ścieżka zawodowa" tagline={`From product design, through to graphic design, to UX/UI, my skillset is forever evolving and continually adaptable in it's approach. My passion is to combine beauty, simplicity and usability.`} image={<WorkImage />}>
-                <TextBouble flipped={true} text={header.cta} top="10%" left="20%" />
+                <TextBouble pointerEvents="none" flipped={true} text={header.cta} top="10%" left="20%" />
             </Hero>
             {/* EDUCATION */}
             <section className={`section ${styles.sectionEducation}`}>
@@ -163,12 +163,12 @@ const IndexPage = (props: IndexPageProps) => {
                 <SkillsItems skills={skills.data} />
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    height="310.5"
+                    viewBox="0 0 1000 310.5"
                     style={{
                         position: 'absolute',
                         top: `100%`,
                         left: 0,
-                        width: `100%`,
+                        width: `70%`,
                     }}
                 >
                     <path d="M0 0a320 320 0 00319.8 310.5 319.4 319.4 0 00249.3-119.4C664.3 73.1 719 4.1 950.6 0z" fill="#0e3239" />

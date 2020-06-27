@@ -13,7 +13,7 @@ p {
 
 .section {
     position: relative;
-    margin: 10rem 0;
+    margin: 5rem 0;
     &-image {
     }
 }
@@ -48,7 +48,7 @@ body {
     }
     &--work {
         background-color: #E4EBDB;
-        background-image: linear-gradient(to bottom, #E4EBDB 0%, #E4EBDB 28%, #fff 28%, #fff 90%, $primary 90%);
+        background-image: linear-gradient(to bottom, #E4EBDB 0%, #E4EBDB 25%, #fff 25%, #fff 90%, $primary 90%);
     }
 }
 

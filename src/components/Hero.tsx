@@ -56,7 +56,9 @@ export const Hero: React.FC<IProps> = ({ name, tagline, style = 'is-seconadry', 
     }, [cursorSwapped]);
 
     return (
-        <section className={`hero ${style} is-bold is-fullheight`}>
+        <section style={{
+            overflow: 'visible'
+        }} className={`hero ${style} is-bold is-fullheight`}>
             <div className="hero-body">
                 <div className="container">
                     <div className="columns is-centered">

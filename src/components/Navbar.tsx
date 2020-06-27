@@ -44,34 +44,59 @@ const Navbar = (props: NavbarProps) => {
                                 : ''
                             }`
                         }
+                        style={{
+                            zIndex: 1,
+                            right: 'initial'
+                        }}
                         role="navigation"
                         aria-label="main navigation"
                     >
-                        <div className="navbar-brand">
+
+                        <div className="navbar-brand navbar-start">
                             <Link
                                 className={`navbar-item`}
                                 to={home}
                             >
                                 {props.siteTitle}
                             </Link>
-                            <a
-                                role="button"
-                                className={`
-                                    navbar-burger
-                                    burger
-                                    ${open ? 'is-active' : ''}
-                                `}
-                                aria-label="menu"
-                                aria-expanded="false"
-                                data-target="navbarMenu"
-                                onClick={toggleNavbar}
-                            >
-                                <span aria-hidden="true" />
-                                <span aria-hidden="true" />
-                                <span aria-hidden="true" />
-                            </a>
                         </div>
-
+                    </nav>
+                    <nav
+                        className={`
+                            navbar
+                            is-fixed-top
+                            navbar--main
+                            ${location.pathname === '/' || /contact/.test(location.pathname)
+                                ? 'is-primary is-transparent'
+                                : ''
+                            }
+                            ${location.pathname === '/'
+                                ? 'is-index'
+                                : ''
+                            }`
+                        }
+                        style={{
+                            left: 'initial'
+                        }}
+                        role="navigation"
+                        aria-label="main navigation"
+                    >
+                        <a
+                            role="button"
+                            className={`
+                                navbar-burger
+                                burger
+                                ${open ? 'is-active' : ''}
+                            `}
+                            aria-label="menu"
+                            aria-expanded="false"
+                            data-target="navbarMenu"
+                            onClick={toggleNavbar}
+                        >
+                            <span aria-hidden="true" />
+                            <span aria-hidden="true" />
+                            <span aria-hidden="true" />
+                        </a>
                         <div
                             id="navbarMenu"
                             className={`
