@@ -1,3 +1,5 @@
+@import '../../styles/abstract.scss';
+
 .g {
     fill: none;
 }
@@ -19,15 +21,57 @@
     stroke: #5d0923;
 }
 
+$work-image-offset: 4;
+$work-image-offset--touch: 30;
+
 .work-image-wrapper {
     position: relative;
     max-width: 900px;
-    margin: auto;
+    margin-top: -10%;
+    margin-left: auto;
+    margin-right: auto;
+    &__offset {
+        margin-left: -#{$work-image-offset + '%'};
+        margin-right: #{$work-image-offset + '%'};
+        @include mobile {
+            margin-left: -#{$work-image-offset--touch * 1.25 + '%'};
+            margin-right: -#{$work-image-offset--touch + '%'};
+        }
+    }
 }
+
+.overPlant {
+    position: absolute;
+    pointer-events: none;
+    bottom: 25%;
+    width: 25%;
+    left: 7.75%;
+    z-index: 1;
+    @include mobile {
+        width: 50%;
+        left: -22.5%;
+    }
+}
+
+.bin {
+    bottom: 12%;
+    right: #{21 + $work-image-offset + '%'};
+    position: absolute;
+    width: 12.5%;
+    max-width: 80px;
+    z-index: 1;
+    @include mobile {
+        bottom: 13%;
+        right: 7%;
+    }
+}
+
 
 #draw-canvas {
     position: absolute;
-    // border: 1px solid red;
-    top: calc(6% - 58px);
-    left: 26.25%;
+    top: 6.75%;
+    left: #{31.25 - $work-image-offset + '%'};
+    @include mobile {
+        left: #{$work-image-offset--touch / 2 + '%'};
+    }
 }

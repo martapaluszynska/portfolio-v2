@@ -6,6 +6,7 @@ interface Props {
     top?: string;
     left?: string;
     bottom?: string;
+    pointerEvents?: string;
     right?: string;
     link?: string;
     flipped?: boolean;
@@ -13,7 +14,7 @@ interface Props {
     className?: string;
 }
 
-export const TextBouble = ({ text, top, left, bottom, right, link, outlined, flipped, className }: Props) => {
+export const TextBouble = ({ text, top, left, bottom, right, link, outlined, flipped, className, pointerEvents }: Props) => {
 
     return (
         <div
@@ -22,6 +23,7 @@ export const TextBouble = ({ text, top, left, bottom, right, link, outlined, fli
                 left,
                 bottom,
                 right,
+                pointerEvents,
             }}
             className={`
                 ${styles.textBouble}

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    name: `Marta Paluszyńska`,
-    tagline: `test = 😹 `,
+    name: `Marta Paluszyńska `,
+    tagline: `| UI Designer`,
     navbarLinks: [
       {
         name: 'about',

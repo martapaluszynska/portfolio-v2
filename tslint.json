@@ -11,7 +11,8 @@
       "jsx-no-multiline-js": [false],
       "max-line-length": false,
       "object-literal-sort-keys": false,
-      "ordered-imports": [true]
+      "ordered-imports": [true],
+      "no-bitwise": false
     },
     "rulesDirectory": []
 }

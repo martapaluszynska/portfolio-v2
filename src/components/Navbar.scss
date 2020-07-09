@@ -1,28 +1,44 @@
 @import '../styles/abstract.scss';
 
-$color: #5D0E2C;
+.overflow--hidden {
+    overflow: hidden;
+}
 
 .navbar {
     font-weight: 700;
+    background-color: transparent !important;
     &-item {
         background-color: transparent !important;
     }
 }
 
 .navbar {
-    box-shadow: $box-shadow;
     padding: 0.5rem 1rem;
     @include touch {
         padding: 0;
     }
-    &:not(.is-primary) {
-        background-color: #E4EBDB !important;
+
+    &--main {
+        left: 0 !important;
+        .navbar-menu {
+            @include touch {
+                background-color: #fff !important;
+                height: 100vh !important;
+                max-height: unset !important;
+                margin-top: -52px;
+            }
+            &.is-active {
+                display: flex !important;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
     }
-    &.is-primary.is-transparent {
-        background-color: #5d0e2c;
-    }
-    &.is-index {
-        background-color: #0E3239 !important;
+
+    &-burger {
+        &.is-active {
+            color: $primary !important;
+        }
     }
 
     &__item {
@@ -31,21 +47,48 @@ $color: #5D0E2C;
         $scale: 1;
         $scale-hover: 1.3;
         $scale-active: 1.5;
+        min-height: 3.25rem;
         @extend %baseTransition;
         @include scaleByOnHover(1.4, 1.4);
 
+        &:first-of-type {
+            display: none;
+        }
+
         .is-primary.is-transparent & {
             color: #fff !important;
+            @include touch {
+                color: $primary !important;
+            }
         }
-        
 
         @include touch {
+            $padding-x: 10%;
             transform: none;
             transition: none;
+            font-size: 2rem;
+            text-transform: capitalize;
+            position: relative;
+            padding-left: $padding-x !important;
+            padding-right: $padding-x !important;
+            padding-top: 2.5% !important;
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: $padding-x;
+                right: $padding-x;
+                // width: 100%;
+                height: 1px;
+                background-color: $primary;
+            }
             &.active,
             &:hover {
                 transform: none;
                 transition: none;
+            }
+            &:first-of-type {
+                display: block;
             }
         }
     }
