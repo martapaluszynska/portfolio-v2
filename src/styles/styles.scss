@@ -14,8 +14,6 @@ p {
 .section {
     position: relative;
     margin: 5rem 0;
-    &-image {
-    }
 }
 
 section {
@@ -30,15 +28,9 @@ body {
     white-space: pre-line;
 }
 
-@mixin touch {
-    @media screen and (max-width: $desktop - 1px) {
-        @content;
-    }
-}
-
 .bg {
     &--secondary {
-        background-color: #E4EBDB;
+        background-color: $bgc-light;
     }
     &--green {
         background-color: #0E3239;
@@ -47,8 +39,8 @@ body {
         background-color: $primary;
     }
     &--work {
-        background-color: #E4EBDB;
-        background-image: linear-gradient(to bottom, #E4EBDB 0%, #E4EBDB 25%, #fff 25%, #fff 90%, $primary 90%);
+        background-color: $bgc-light;
+        background-image: linear-gradient(to bottom, $bgc-light 0%, $bgc-light 25%, #fff 25%, #fff 90%, $primary 90%);
     }
 }
 

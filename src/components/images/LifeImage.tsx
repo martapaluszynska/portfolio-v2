@@ -14,15 +14,15 @@ export const LifeImage = () => {
 
     const getCoordinates = (event: MouseEvent) => {
         // const svg: HTMLCanvasElement = svgRef.current;
-        const viewportOffsetTop = svgRef?.current?.getBoundingClientRect().top + window.scrollY;
-        const viewportOffsetLeft = svgRef?.current?.getBoundingClientRect().left;
+        const viewportOffsetTop = svgRef?.current!.getBoundingClientRect().top + window.scrollY;
+        const viewportOffsetLeft = svgRef?.current!.getBoundingClientRect().left;
         return { x: event.pageX - viewportOffsetLeft, y: event.pageY - viewportOffsetTop };
     };
 
     const followMouse = useCallback(
         (event: SVGSVGElementEventMap['mousemove']) => {
-            const percentageX = (event.pageX - svgRef?.current?.getBoundingClientRect().left) / svgRef?.current?.clientWidth;
-            const percentageY = (event.pageY - svgRef?.current?.getBoundingClientRect().top) / svgRef?.current?.clientHeight;
+            const percentageX = (event.pageX - svgRef?.current!.getBoundingClientRect().left) / svgRef?.current!.clientWidth;
+            const percentageY = (event.pageY - svgRef?.current!.getBoundingClientRect().top) / svgRef?.current!.clientHeight;
 
             const positionOffsetX = 0.3875 + (percentageX / ((0.4 - 0.3875) * 10000));
             const positionOffsetY = 0.7275 + (percentageY / ((0.8 - 0.7275) * 1000));
@@ -58,7 +58,7 @@ export const LifeImage = () => {
 
     useEffect(() => {
         const svg = svgRef.current;
-        svg?.addEventListener('pointermove', onMouseMove, {passive: true});
+        svg?.addEventListener('pointermove', onMouseMove, { passive: true });
         svg?.addEventListener('touchmove', onMouseMove);
         return () => {
             svg?.removeEventListener('pointermove', onMouseMove);

@@ -56,9 +56,12 @@ export const Hero: React.FC<IProps> = ({ name, tagline, style = 'is-seconadry', 
     }, [cursorSwapped]);
 
     return (
-        <section style={{
-            overflow: 'visible'
-        }} className={`hero ${style} is-bold is-fullheight`}>
+        <section
+            style={{
+            overflow: 'visible',
+            }}
+            className={`hero ${style} is-bold is-fullheight`}
+        >
             <div className="hero-body">
                 <div className="container">
                     <div className="columns is-centered">
@@ -120,6 +123,7 @@ export const Hero: React.FC<IProps> = ({ name, tagline, style = 'is-seconadry', 
                                 top: state.y,
                                 transform: `translate(${currentImage?.transform[0] ?? 0}%, ${currentImage?.transform[1] ?? 0}%)`,
                                 transition: `opacity .15s ease-out`,
+                                zIndex: 1,
                             }}
                         />
                     );

@@ -85,13 +85,13 @@ const IndexPage = (props: IndexPageProps) => {
         <Layout>
             <Helmet
                 bodyAttributes={{
-                    class: 'bg--work'
+                    class: 'bg--work',
                 }}
             >
-                <meta name="theme-color" content="#E4EBDB" />
-                <meta name="msapplication-navbutton-color" content="#E4EBDB" />
+                <meta name="theme-color" content="#F0F4EB" />
+                <meta name="msapplication-navbutton-color" content="#F0F4EB" />
                 <meta name="apple-mobile-web-app-capable" content="yes" />
-                <meta name="apple-mobile-web-app-status-bar-style" content="#E4EBDB" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="#F0F4EB" />
             </Helmet>
             <Hero name="Ścieżka zawodowa" tagline={`From product design, through to graphic design, to UX/UI, my skillset is forever evolving and continually adaptable in it's approach. My passion is to combine beauty, simplicity and usability.`} image={<WorkImage />}>
                 <TextBouble pointerEvents="none" flipped={true} text={header.cta} top="10%" left="20%" />

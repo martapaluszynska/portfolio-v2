@@ -178,7 +178,9 @@ const ContactForm = () => {
                             </div>
                         </form>
                         <div className={`${styles.aditionalInfo}`}>
-                            {`or\npaluszynska.marta@gmail.com\n+48 692 208 062`}
+                            or<br />
+                            <a href="mailto:paluszynska.marta@gmail.com">paluszynska.marta@gmail.com</a><br />
+                            <a href="tel:+48692208062">+48 692 208 062</a><br />
                         </div>
                     </div>
                 </div>

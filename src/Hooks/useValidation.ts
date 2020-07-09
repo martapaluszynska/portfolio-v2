@@ -20,8 +20,5 @@ const badLength = {
 
 export const useValidation = (data: {[K: string]: string}) => {
     const [errors, setErrors] = useState({});
-
-
-
     return {errors, setErrors};
 };

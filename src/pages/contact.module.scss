@@ -89,6 +89,9 @@ $color: white;
     white-space: pre-line;
     margin: 0 -20%;
     max-width: 400px;
+    a {
+        color: white;
+    }
     @include touch {
         margin: 0;
         width: 100%;

@@ -26,10 +26,10 @@ export default (props: ScoutsPageProps) => {
                     class: 'bg--secondary',
                 }}
             >
-                <meta name="theme-color" content="#E4EBDB" />
-                <meta name="msapplication-navbutton-color" content="#E4EBDB" />
+                <meta name="theme-color" content="#F0F4EB" />
+                <meta name="msapplication-navbutton-color" content="#F0F4EB" />
                 <meta name="apple-mobile-web-app-capable" content="yes" />
-                <meta name="apple-mobile-web-app-status-bar-style" content="#E4EBDB" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="#F0F4EB" />
             </Helmet>
             <Hero name="Balance" tagline={BALANCE_PAGE.header.text} style={'is-seconadry'} image={<BalanceImage />}>
                 <TextBouble text={BALANCE_PAGE.header.cta} top="30%" left="75%" />
