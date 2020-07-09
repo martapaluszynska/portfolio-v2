@@ -21,16 +21,6 @@ export default (props: ScoutsPageProps) => {
 
     return (
         <Layout>
-            <Helmet
-                bodyAttributes={{
-                    class: 'bg--secondary',
-                }}
-            >
-                <meta name="theme-color" content="#F0F4EB" />
-                <meta name="msapplication-navbutton-color" content="#F0F4EB" />
-                <meta name="apple-mobile-web-app-capable" content="yes" />
-                <meta name="apple-mobile-web-app-status-bar-style" content="#F0F4EB" />
-            </Helmet>
             <Hero
                 name="Life"
                 tagline={LIFE_PAGE.header.text}
