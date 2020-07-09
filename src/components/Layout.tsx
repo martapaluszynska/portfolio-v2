@@ -71,7 +71,7 @@ export const Layout: React.FC<IProps> = ({ mainElementClass, children }) => {
                     const currentPageObject = () => {
                         // Returning single object from main links list
                         const currentPage = navbarLinks.filter(
-                            (linkObject: {name: string; link: string}) => linkObject?.name === (location.pathname.length === 1 ? 'about' : location.pathname.substring(1)),
+                            (linkObject: {name: string; link: string}) => linkObject?.name === (location.pathname.length === 1 ? 'about' : location.pathname.replace(/\//g, '')),
                         )[0];
                         return (pageObject as { [T: string]: any })[currentPage?.name];
                     };

@@ -1,8 +1,9 @@
 import { Location } from '@reach/router';
 import { Link } from 'gatsby';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { NavbarLink } from '../models/site';
 import { Links } from './Links';
+
 import './Navbar.scss';
 
 interface NavbarProps {
@@ -21,11 +22,29 @@ const Navbar = (props: NavbarProps) => {
     const navigation = props.menuLinks.filter((link) => link.name !== '404');
     const dotsNavigation = props.menuLinks.filter((link) => links.includes(link.name));
 
+    const [isScrolled, setIsScrolled] = useState(false);
+
     const [open, setOpen] = useState(false);
 
     const toggleNavbar = (event: any) => {
         setOpen(!open);
     };
+
+    const onWindowsSCroll = useCallback(
+        (event: Event) => {
+            if (window.scrollY > window.innerHeight / 10) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        },
+        [],
+    );
+
+    useEffect(() => {
+        window.addEventListener('scroll', onWindowsSCroll);
+        return () => window.removeEventListener('scroll', onWindowsSCroll);
+    }, []);
 
     useEffect(() => {
         open
@@ -42,37 +61,8 @@ const Navbar = (props: NavbarProps) => {
                             className={`
                             navbar
                             is-fixed-top
-                            ${location.pathname === '/' || /contact/.test(location.pathname)
-                                    ? 'is-primary is-transparent'
-                                    : ''
-                                }
-                            ${location.pathname === '/'
-                                    ? 'is-index'
-                                    : ''
-                                }`
-                            }
-                            style={{
-                                right: 'initial',
-                                zIndex: 31,
-                            }}
-                            role="navigation"
-                            aria-label="main navigation"
-                        >
-
-                            <div className="navbar-brand navbar-start">
-                                <Link
-                                    className={`navbar-item`}
-                                    to={home}
-                                >
-                                    {props.siteTitle}
-                                </Link>
-                            </div>
-                        </nav>
-                        <nav
-                            className={`
-                            navbar
-                            is-fixed-top
                             navbar--main
+                            ${isScrolled ? 'scrolled' : ''}
                             ${location.pathname === '/' || /contact/.test(location.pathname)
                                     ? 'is-primary is-transparent'
                                     : ''
@@ -88,22 +78,30 @@ const Navbar = (props: NavbarProps) => {
                             role="navigation"
                             aria-label="main navigation"
                         >
-                            <a
-                                role="button"
-                                className={`
-                                navbar-burger
-                                burger
-                                ${open ? 'is-active' : ''}
-                            `}
-                                aria-label="menu"
-                                aria-expanded="false"
-                                data-target="navbarMenu"
-                                onClick={toggleNavbar}
-                            >
-                                <span aria-hidden="true" />
-                                <span aria-hidden="true" />
-                                <span aria-hidden="true" />
-                            </a>
+                            <div className="navbar-brand">
+                                <Link
+                                    className={`navbar-item`}
+                                    to={home}
+                                >
+                                    {props.siteTitle}
+                                </Link>
+                                <a
+                                    role="button"
+                                    className={`
+                                    navbar-burger
+                                    burger
+                                    ${open ? 'is-active' : ''}
+                                `}
+                                    aria-label="menu"
+                                    aria-expanded="false"
+                                    data-target="navbarMenu"
+                                    onClick={toggleNavbar}
+                                >
+                                    <span aria-hidden="true" />
+                                    <span aria-hidden="true" />
+                                    <span aria-hidden="true" />
+                                </a>
+                            </div>
                             <div
                                 id="navbarMenu"
                                 className={`

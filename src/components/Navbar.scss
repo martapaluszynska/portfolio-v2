@@ -13,6 +13,20 @@
 }
 
 .navbar {
+    transition: all 200ms ease-in-out;
+    &.scrolled {
+        box-shadow: $box-shadow;
+        &:not(.is-primary) {
+            background-color: $bgc-light !important;
+        }
+        &.is-primary.is-transparent {
+            background-color: $primary !important;
+        }
+        &.is-index {
+            background-color: $terinary !important;
+        }
+    }
+
     padding: 0.5rem 1rem;
     @include touch {
         padding: 0;
