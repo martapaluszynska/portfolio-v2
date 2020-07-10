@@ -19,7 +19,7 @@
         &:not(.is-primary) {
             background-color: $bgc-light !important;
         }
-        &.is-primary.is-transparent {
+        &.is-primary {
             background-color: $primary !important;
         }
         &.is-index {

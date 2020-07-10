@@ -64,7 +64,7 @@ const Navbar = (props: NavbarProps) => {
                             navbar--main
                             ${isScrolled ? 'scrolled' : ''}
                             ${location.pathname === '/' || /contact/.test(location.pathname)
-                                    ? 'is-primary is-transparent'
+                                    ? 'is-primary'
                                     : ''
                                 }
                             ${location.pathname === '/'
