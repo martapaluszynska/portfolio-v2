@@ -74,6 +74,7 @@ const Navbar = (props: NavbarProps) => {
                             }
                             style={{
                                 left: 'initial',
+                                zIndex: 1001,
                             }}
                             role="navigation"
                             aria-label="main navigation"
