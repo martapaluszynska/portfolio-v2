@@ -158,6 +158,7 @@ const IndexPage = (props: IndexPageProps) => {
                         top: `100%`,
                         left: 0,
                         width: `70%`,
+                        marginTop: `-1px`,
                     }}
                 >
                     <path d="M0 0a320 320 0 00319.8 310.5 319.4 319.4 0 00249.3-119.4C664.3 73.1 719 4.1 950.6 0z" fill="#0e3239" />

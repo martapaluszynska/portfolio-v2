@@ -26,7 +26,10 @@ $work-image-offset--touch: 30;
 
 .work-image-wrapper {
     position: relative;
-    max-width: 640px;
+    max-width: 940px;
+    @media screen and (max-height: 700px) {
+        max-width: 640px;
+    }
     margin-top: -10%;
     margin-left: auto;
     margin-right: auto;
