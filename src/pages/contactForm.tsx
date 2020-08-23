@@ -1,4 +1,4 @@
-import { faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faDribbble, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import React, { useCallback, useEffect, useState } from 'react';
@@ -142,6 +142,9 @@ const ContactForm = () => {
                             </a>
                             <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/marta.paluszynska" className={`${styles.socialIcon}`}>
                                 <FontAwesomeIcon icon={faFacebook} />
+                            </a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://dribbble.com/marta_paluszynska" className={`${styles.socialIcon}`}>
+                                <FontAwesomeIcon icon={faDribbble} />
                             </a>
                         </div>
 

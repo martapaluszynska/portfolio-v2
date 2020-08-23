@@ -87,9 +87,9 @@ const IndexPage = (props: IndexPageProps) => {
             </Hero>
             {/* EDUCATION */}
             <section className={`section ${styles.sectionEducation}`}>
-                <div className={`${styles.scrollForMore}`}>
+                {/* <div className={`${styles.scrollForMore}`}>
                     <a>scroll for more!</a>
-                </div>
+                </div> */}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 1366 190.3"
