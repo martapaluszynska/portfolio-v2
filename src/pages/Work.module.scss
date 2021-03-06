@@ -70,10 +70,10 @@ $bgc-terinary: $bgc-light;
 }
 
 .scroll-for-more {
-    top: -145px;
+    top: 0;
+    // height: 10px;
     position: absolute;
     z-index: 9999;
-    left: 4%;
     a {
         color: #fff;
         cursor: default;

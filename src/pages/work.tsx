@@ -88,7 +88,6 @@ const IndexPage = (props: IndexPageProps) => {
             {/* EDUCATION */}
             <section className={`section ${styles.sectionEducation}`}>
                 {/* <div className={`${styles.scrollForMore}`}>
-                    <a>scroll for more!</a>
                 </div> */}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -105,6 +104,38 @@ const IndexPage = (props: IndexPageProps) => {
                         fill="#0e3239"
                         d="M307 190a83.7 83.7 0 01-31.4-3.6c-52-16.7-55-74.4-55-76a110.3 110.3 0 00-220.6 0l.1 5.5H0v166.3h1366V115.9z"
                     />
+                    <g
+                        transform="
+                            scale(.75)
+                            translate(125 40)
+                        "
+                        style={{
+                            fill: 'none',
+                            stroke: '#fff',
+                            strokeWidth: 4,
+                            strokeMiterlimit: 10,
+                        }}
+                    >
+                        <polyline
+                            style={{
+                                strokeLinecap: 'round',
+                                strokeLinejoin: 'round',
+                            }}
+                            points="37,85.8 22,95.8 7,85.8 "
+                        />
+                        <path
+                            d="M2,52.2l0-30.5C2,10.8,10.8,2,21.8,2l0.5,0C33.2,2,42,10.8,42,21.8l0,30.5C42,63.2,33.2,72,22.2,72l-0.5,0C10.8,72,2,63.2,2,52.2z"
+                        />
+                        <line
+                            style={{
+                                strokeLinecap: 'round',
+                            }}
+                            x1="22"
+                            y1="17.3"
+                            x2="22"
+                            y2="27.3"
+                        />
+                    </g>
                 </svg>
                 <div className="container">
                     <div className="columns is-centered is-relative">
